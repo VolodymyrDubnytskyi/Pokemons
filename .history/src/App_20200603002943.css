@@ -46,6 +46,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  height: 55px;
   border-left-color: rgb(255, 255, 255);
   border-top-color: rgb(255, 255, 255);
   border-right-color: rgb(5, 6, 8);
@@ -90,7 +91,7 @@ body {
   outline: none;
 }
 .windows-logo{
-  transform: rotate(-20deg);
+  transform: rotate(-15deg);
   margin-right: 5px;
 }
 

@@ -1,0 +1,10 @@
+:root {
+  --color-main: #55AAAA:
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}

@@ -46,6 +46,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  height: 55px;
   border-left-color: rgb(255, 255, 255);
   border-top-color: rgb(255, 255, 255);
   border-right-color: rgb(5, 6, 8);
@@ -56,41 +57,8 @@ body {
   background-color: rgb(206, 208, 207);
   color: rgb(5, 6, 8);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   width: 100%;
   border-style: solid;
   border-width: 2px;
 }
-.navbar-container {
-  padding: 4px;
-  display: flex;
-  align-items: center;
-}
-.nav-menu-btn {
-  box-sizing: border-box;
-  background-color: rgb(206, 208, 207);
-  color: rgb(5, 6, 8);
-  border-left-color: rgb(255, 255, 255);
-  border-top-color: rgb(255, 255, 255);
-  border-right-color: rgb(5, 6, 8);
-  border-bottom-color: rgb(5, 6, 8);
-  box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
-  position: relative;
-  display: inline-flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  height: 35px;
-  width: auto;
-  font-size: 18px;
-  border-style: solid;
-  border-width: 2px;
-  padding: 5px 15px;
-  outline: none;
-}
-.windows-logo{
-  transform: rotate(-20deg);
-  margin-right: 5px;
-}
-
