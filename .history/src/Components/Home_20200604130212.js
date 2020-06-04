@@ -32,17 +32,13 @@ class Home extends Component {
     }
 
     render() {
-        // console.log(this.state.pokemonsDetail);
+        console.log(this.state.pokemonsDetail);
         return (
             <section className={'main-bg'}>
                 <div className={'content-box'}>
-                    {this.state.pokemonsDetail.map((item) => {
-                        return (
-                            <div className={'pokemon-container'}>
-                                <img src={item.sprites.front_default} alt="" />
-                            </div>
-                        );
-                    })}
+                    <div className={'pokemon-container'}>
+                       
+                    </div>
                 </div>
             </section>
         );

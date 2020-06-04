@@ -14,5 +14,5 @@
   max-width: 1380px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(autofill, 100px);
 }
