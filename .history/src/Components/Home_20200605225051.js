@@ -41,8 +41,7 @@ class Home extends Component {
                     {this.state.pokemonsDetail.map((item) => {
                         return (
                             <>
-                                <PopUpPokemonDetail 
-                                pokemon={item}/>
+                                <PopUpPokemonDetail />
                                 <div className={'pokemon-container'}>
                                     <img src={item.sprites.front_default} alt="pokemon-image" />
                                     <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h3>

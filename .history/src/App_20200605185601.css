@@ -189,6 +189,11 @@
 .disabled-text-btn,
 .active-text-btn {
   padding: 0 0.5rem;
+}
+.disabled-text-btn {
+  box-sizing: border-box;
+  color: rgb(136, 140, 143);
+  text-shadow: rgb(255, 255, 255) 1px 1px;
   display: inline-flex;
   -webkit-box-align: center;
   align-items: center;
@@ -196,41 +201,6 @@
   justify-content: center;
   height: 27px;
   font-size: 16px;
-  background-color: transparent;
-  border: 2px solid transparent;
-  font-weight: 500;
-}
-.disabled-text-btn {
-  color: rgb(136, 140, 143);
-  text-shadow: rgb(255, 255, 255) 1px 1px;
 }
 .active-text-btn {
-}
-.pokemon-detail {
-  width: 80%;
-  height: 270px;
-  border: 1px solid;
-  margin: 20px auto auto auto;
-}
-.pokemon-detail-menu {
-  display: flex;
-  align-items: center;
-}
-.pokemon-detail-content {
-  background-color: var(--menu-bg-color);
-  color: var(--main-color);
-  border-left-color: rgb(255, 255, 255);
-  border-top-color: rgb(255, 255, 255);
-  border-right-color: var(--main-color);
-  border-bottom-color: var(--main-color);
-  box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
-  position: relative;
-  display: block;
-  height: 90%;
-  border-style: solid;
-  border-width: 2px;
-  padding: calc(1.5rem) 1rem 1rem;
-}
-.pokemon-detail-menu {
-  height: 10%;
 }

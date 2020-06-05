@@ -1,7 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 import Header from './Header';
-import PopUpPokemonDetail from './PopUp';
 
 class Home extends Component {
     state = {
@@ -36,18 +35,14 @@ class Home extends Component {
     render() {
         return (
             <section className={'main-bg'}>
-                <Header />
+                <Header/>
                 <div className={'content-box'}>
                     {this.state.pokemonsDetail.map((item) => {
                         return (
-                            <>
-                                <PopUpPokemonDetail 
-                                pokemon={item}/>
-                                <div className={'pokemon-container'}>
-                                    <img src={item.sprites.front_default} alt="pokemon-image" />
-                                    <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h3>
-                                </div>
-                            </>
+                            <div className={'pokemon-container'}>
+                                <img src={item.sprites.front_default} alt="pokemon-image" />
+                                <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + name.slice(1)}</h3>
+                            </div>
                         );
                     })}
                 </div>
