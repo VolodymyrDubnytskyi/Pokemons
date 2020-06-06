@@ -3,12 +3,12 @@ import { Component } from 'react';
 import Header from './Header';
 import PopUpPokemonDetail from './PopUp';
 
+let popUp = ''
+
 class Home extends Component {
     state = {
         collectionsOfUrl: '',
-        pokemonsDetail: [],
-        clickedPokemonDetail: '',
-        activePopUp: false
+        pokemonsDetail: []
     }
 
     componentDidMount() {
@@ -35,22 +35,22 @@ class Home extends Component {
         })
     }
     checkPokemonDetail = pokemon => {
-        this.setState({
-            clickedPokemonDetail: pokemon,
-            activePopUp: true
-        })
+        popUp = <PopUpPokemonDetail
+            pokemon={this.state.pokemonsDetail} />
         console.log(pokemon);
     }
     render() {
+        console.log(popUp);
         return (
             <section className={'main-bg'}>
                 <Header />
-                {this.state.activePopUp && <PopUpPokemonDetail
-                    pokemon={this.state.clickedPokemonDetail} />}
+                {popUp}
+                {/* <PopUpPokemonDetail
+                    pokemon={this.state.pokemonsDetail} /> */}
                 <div className={'content-box'}>
-                    {this.state.pokemonsDetail.map((item, i) => {
+                    {this.state.pokemonsDetail.map((item) => {
                         return (
-                            <div className={'pokemon-container'} onDoubleClick={() => this.checkPokemonDetail(item)} key={i}>
+                            <div className={'pokemon-container'} onDoubleClick={() => this.checkPokemonDetail(item)}>
                                 <img src={item.sprites.front_default} alt="pokemon-image" />
                                 <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h3>
                             </div>

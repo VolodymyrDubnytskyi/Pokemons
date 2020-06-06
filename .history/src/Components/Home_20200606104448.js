@@ -6,9 +6,7 @@ import PopUpPokemonDetail from './PopUp';
 class Home extends Component {
     state = {
         collectionsOfUrl: '',
-        pokemonsDetail: [],
-        clickedPokemonDetail: '',
-        activePopUp: false
+        pokemonsDetail: []
     }
 
     componentDidMount() {
@@ -34,23 +32,19 @@ class Home extends Component {
                 })
         })
     }
-    checkPokemonDetail = pokemon => {
-        this.setState({
-            clickedPokemonDetail: pokemon,
-            activePopUp: true
-        })
-        console.log(pokemon);
+    checkPokemonDetail = item => {
+        console.log(item);
     }
     render() {
         return (
             <section className={'main-bg'}>
                 <Header />
-                {this.state.activePopUp && <PopUpPokemonDetail
-                    pokemon={this.state.clickedPokemonDetail} />}
+                <PopUpPokemonDetail
+                    pokemon={this.state.pokemonsDetail} />
                 <div className={'content-box'}>
-                    {this.state.pokemonsDetail.map((item, i) => {
+                    {this.state.pokemonsDetail.map((item) => {
                         return (
-                            <div className={'pokemon-container'} onDoubleClick={() => this.checkPokemonDetail(item)} key={i}>
+                            <div className={'pokemon-container'} onDoubleClick={() => this.checkPokemonDetail(item)}>
                                 <img src={item.sprites.front_default} alt="pokemon-image" />
                                 <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h3>
                             </div>

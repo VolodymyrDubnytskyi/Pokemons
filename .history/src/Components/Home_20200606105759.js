@@ -39,7 +39,7 @@ class Home extends Component {
             clickedPokemonDetail: pokemon,
             activePopUp: true
         })
-        console.log(pokemon);
+        // console.log(pokemon);
     }
     render() {
         return (

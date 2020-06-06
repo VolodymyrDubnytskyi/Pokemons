@@ -266,7 +266,8 @@
   width: 60%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .pokemon-detail-img {
   width: 85%;

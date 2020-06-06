@@ -39,14 +39,14 @@ class Home extends Component {
             clickedPokemonDetail: pokemon,
             activePopUp: true
         })
-        console.log(pokemon);
+        // console.log(pokemon);
     }
     render() {
         return (
             <section className={'main-bg'}>
                 <Header />
-                {this.state.activePopUp && <PopUpPokemonDetail
-                    pokemon={this.state.clickedPokemonDetail} />}
+                <PopUpPokemonDetail
+                    pokemon={this.state.clickedPokemonDetail} />
                 <div className={'content-box'}>
                     {this.state.pokemonsDetail.map((item, i) => {
                         return (

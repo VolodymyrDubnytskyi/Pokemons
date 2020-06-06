@@ -25,10 +25,10 @@ class PopUpPokemonDetail extends Component {
                         <div className={'pokemon-detail-menu-item'}>Abilities</div>
                     </nav>
                     <div className={'pokemon-detail-content'}>
-                        <div className={'pokemon-detail-img-container'}>
-                            <img src={pokemon.sprites.front_default} alt="pokemon" className={'pokemon-detail-img'} />
+                        <div>
+                            <img src={pokemon.sprites.front_default} alt="" />
                         </div>
-                        <div className={'pokemon-detail-description-box'}>
+                        <div>
                             <h2>{pokemon.name}</h2>
                         </div>
                     </div>

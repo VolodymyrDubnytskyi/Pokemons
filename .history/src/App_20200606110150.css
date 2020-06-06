@@ -209,6 +209,7 @@
 .pokemon-detail {
   width: 80%;
   height: 270px;
+  border: 1px solid;
   margin: 20px auto auto auto;
 }
 .pokemon-detail-menu {
@@ -224,8 +225,7 @@
   border-bottom-color: var(--main-color);
   box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
   position: relative;
-  display: flex;
-  align-items: center;
+  display: block;
   height: 90%;
   border-style: solid;
   border-width: 2px;
@@ -254,21 +254,4 @@
   border-width: 2px 2px 2px;
   padding: 0px 0.5rem;
   border-bottom: none;
-}
-.pokemon-detail-img-container {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pokemon-detail-description-box {
-  width: 60%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.pokemon-detail-img {
-  width: 85%;
-  height: 85%;
 }

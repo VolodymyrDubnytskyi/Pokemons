@@ -264,9 +264,6 @@
 }
 .pokemon-detail-description-box {
   width: 60%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 .pokemon-detail-img {
   width: 85%;

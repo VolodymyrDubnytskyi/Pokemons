@@ -255,20 +255,3 @@
   padding: 0px 0.5rem;
   border-bottom: none;
 }
-.pokemon-detail-img-container {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pokemon-detail-description-box {
-  width: 60%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.pokemon-detail-img {
-  width: 85%;
-  height: 85%;
-}
