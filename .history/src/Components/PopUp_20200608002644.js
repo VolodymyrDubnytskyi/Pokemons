@@ -58,27 +58,14 @@ class PopUpPokemonDetail extends Component {
                                 </div>
                                 <div>
                                     <b> Height:</b> {+(pokemon.height + '0') / 100}m
-                                    <b>Weight:</b> {+(pokemon.weight + '00') / 1000}kg
+                             <b>Weight:</b> {+(pokemon.weight + '00') / 1000}kg
                      </div>
                                 <p></p>
                             </div>
                         </div>
                         :
                         <div className={'stats-container'}>
-                            <div className={'stats-content-container'}>
-                                <div className={'stats-table-heading'}>
-                                    <div className={'stats-table-column'}>Name</div>
-                                    <div>Base</div>
-                                </div>
-                                {pokemon.stats.map((item) => {
-                                    return (
-                                        <div className={'stats'}>
-                                            <div className={'stats-table-column'}>{item.stat.name.charAt(0).toUpperCase() + item.stat.name.slice(1)}</div>
-                                            <div>{item.base_stat}</div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
+
                         </div>
                     }
                 </div>

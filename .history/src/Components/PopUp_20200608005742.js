@@ -74,7 +74,7 @@ class PopUpPokemonDetail extends Component {
                                     return (
                                         <div className={'stats'}>
                                             <div className={'stats-table-column'}>{item.stat.name.charAt(0).toUpperCase() + item.stat.name.slice(1)}</div>
-                                            <div>{item.base_stat}</div>
+                                            <div>{item.base_stat.charAt(0).toUpperCase() + item.base_stat.slice(1)}</div>
                                         </div>
                                     );
                                 })}

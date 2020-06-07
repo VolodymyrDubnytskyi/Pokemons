@@ -66,18 +66,18 @@ class PopUpPokemonDetail extends Component {
                         :
                         <div className={'stats-container'}>
                             <div className={'stats-content-container'}>
-                                <div className={'stats-table-heading'}>
-                                    <div className={'stats-table-column'}>Name</div>
-                                    <div>Base</div>
-                                </div>
-                                {pokemon.stats.map((item) => {
-                                    return (
-                                        <div className={'stats'}>
-                                            <div className={'stats-table-column'}>{item.stat.name.charAt(0).toUpperCase() + item.stat.name.slice(1)}</div>
-                                            <div>{item.base_stat}</div>
-                                        </div>
-                                    );
-                                })}
+                                <table>
+                                    <thead>
+                                        <th>Name</th>
+                                        <th>Base</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>hp</th>
+                                            <th>80</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     }
