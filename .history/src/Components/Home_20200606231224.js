@@ -12,7 +12,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100')
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=150&offset=200')
             .then(res => res.json())
             .then((data => {
                 this.setState({
@@ -29,40 +29,33 @@ class Home extends Component {
                 .then(res => res.json())
                 .then((result) => {
                     this.setState({
-                        pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b) => a.id - b.id)
+                        pokemonsDetail: [...this.state.pokemonsDetail, {
+                            data: result,
+                        }
+                        ]
                     })
                 })
         })
     }
-    getPokemonSpecies = pokemon => {
-        fetch(pokemon.species.url)
-            .then((res => res.json()))
-            .then((data => this.setState({ pokemonSpecies: data })))
-    }
-
     checkPokemonDetail = pokemon => {
         this.setState({
             clickedPokemonDetail: pokemon,
             activePopUp: true
         })
-        this.getPokemonSpecies(pokemon)
+        console.log(pokemon);
     }
-
     render() {
-        console.log(this.state.clickedPokemonDetail);
+    console.log(this.state.pokemonsDetail);
         return (
             <section className={'main-bg'}>
-                <Header />
+                {/* <Header />
                 {this.state.activePopUp && <PopUpPokemonDetail
-                    pokemon={this.state.clickedPokemonDetail}
-                    activePopUp={this.state.activePopUp}
-                    pokemonSpecies={this.state.pokemonSpecies} />}
+                    pokemon={this.state.clickedPokemonDetail} />}
                 <div className={'content-box'}>
                     {this.state.pokemonsDetail.map((item, i) => {
                         return (
                             <div
                                 className={'pokemon-container'}
-                                // onClick={}
                                 onDoubleClick={() => this.checkPokemonDetail(item)}
                                 key={i}
                             >
@@ -71,7 +64,7 @@ class Home extends Component {
                             </div>
                         );
                     })}
-                </div>
+                </div> */}
             </section>
         );
     }

@@ -29,40 +29,29 @@ class Home extends Component {
                 .then(res => res.json())
                 .then((result) => {
                     this.setState({
-                        pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b) => a.id - b.id)
+                        pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b)=> a.id - b.id)
                     })
                 })
         })
     }
-    getPokemonSpecies = pokemon => {
-        fetch(pokemon.species.url)
-            .then((res => res.json()))
-            .then((data => this.setState({ pokemonSpecies: data })))
-    }
-
     checkPokemonDetail = pokemon => {
         this.setState({
             clickedPokemonDetail: pokemon,
             activePopUp: true
         })
-        this.getPokemonSpecies(pokemon)
     }
-
     render() {
-        console.log(this.state.clickedPokemonDetail);
+        console.log(this.state.pokemonsDetail);
         return (
             <section className={'main-bg'}>
                 <Header />
                 {this.state.activePopUp && <PopUpPokemonDetail
-                    pokemon={this.state.clickedPokemonDetail}
-                    activePopUp={this.state.activePopUp}
-                    pokemonSpecies={this.state.pokemonSpecies} />}
+                    pokemon={this.state.clickedPokemonDetail} />}
                 <div className={'content-box'}>
                     {this.state.pokemonsDetail.map((item, i) => {
                         return (
                             <div
                                 className={'pokemon-container'}
-                                // onClick={}
                                 onDoubleClick={() => this.checkPokemonDetail(item)}
                                 key={i}
                             >

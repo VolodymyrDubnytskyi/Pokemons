@@ -2,21 +2,10 @@ import React from 'react';
 import { Component } from 'react';
 
 class PopUpPokemonDetail extends Component {
-    // state = {
-    //     data: '',
-    // }
-    // getPokemonDescription = e => {
-    //     fetch(this.props.pokemon.species.url)
-    //         .then((res => res.json()))
-    //         .then((data => this.setState({ data: data })))
-    // }
-    // componentDidMount() {
-    //     this.getPokemonDescription()
 
-    // }
     render() {
-        const { pokemon, pokemonSpecies } = this.props;
-        console.log(pokemonSpecies);
+        const { pokemon } = this.props;
+        console.log(pokemon.sprites.front_default);
         return (
             <div className={'pop-up-detail-bg'}>
                 <header className={'pop-up-detail-header'}>
@@ -40,17 +29,8 @@ class PopUpPokemonDetail extends Component {
                             <img src={pokemon.sprites.front_default} alt="pokemon" className={'pokemon-detail-img'} />
                         </div>
                         <div className={'pokemon-detail-description-box'}>
-                            <h2>
-                                {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}#{pokemon.id}
-                            </h2>
-                            <div className={'pokemon-detail-type-of-pokemon'}>
-                                {pokemon.types.map(item => <div>{item.type.name}</div>)}
-                            </div>
-                            <div>
-                                <b> Height:</b> {parseInt(this.props.pokemon.height.toString() + '0') / 100}m
-                                <b>Weight:</b> {parseInt(this.props.pokemon.weight.toString() + '00') / 1000}kg
-                        </div>
-                            <p></p>
+                            <h2>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}#{pokemon.id}</h2>
+                            <span className={'pokemon-detail-type-of-pokemon'}>{pokemon.types[0].type.name}</span>
                         </div>
                     </div>
                 </div>

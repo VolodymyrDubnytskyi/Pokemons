@@ -34,20 +34,19 @@ class Home extends Component {
                 })
         })
     }
-    getPokemonSpecies = pokemon => {
-        fetch(pokemon.species.url)
-            .then((res => res.json()))
-            .then((data => this.setState({ pokemonSpecies: data })))
-    }
-
     checkPokemonDetail = pokemon => {
         this.setState({
             clickedPokemonDetail: pokemon,
             activePopUp: true
         })
-        this.getPokemonSpecies(pokemon)
+     this.getPokemonDescription(pokemon)
     }
-
+    getPokemonDescription = pokemon => {
+        console.log(pokemon);
+        fetch(pokemon.species.url)
+            .then((res => res.json()))
+            .then((data => this.setState({ data: data })))
+    }
     render() {
         console.log(this.state.clickedPokemonDetail);
         return (
@@ -55,8 +54,7 @@ class Home extends Component {
                 <Header />
                 {this.state.activePopUp && <PopUpPokemonDetail
                     pokemon={this.state.clickedPokemonDetail}
-                    activePopUp={this.state.activePopUp}
-                    pokemonSpecies={this.state.pokemonSpecies} />}
+                    activePopUp={this.state.activePopUp} />}
                 <div className={'content-box'}>
                     {this.state.pokemonsDetail.map((item, i) => {
                         return (

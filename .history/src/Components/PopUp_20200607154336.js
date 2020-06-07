@@ -2,21 +2,26 @@ import React from 'react';
 import { Component } from 'react';
 
 class PopUpPokemonDetail extends Component {
-    // state = {
-    //     data: '',
-    // }
-    // getPokemonDescription = e => {
-    //     fetch(this.props.pokemon.species.url)
-    //         .then((res => res.json()))
-    //         .then((data => this.setState({ data: data })))
-    // }
-    // componentDidMount() {
-    //     this.getPokemonDescription()
+    state = {
+        data: '',
+    }
+    // let pokemonHeight = parseInt(pokemon.height.toString() + '0') / 100
+    // let pokemonHeightCount = pokemonHeight
 
-    // }
+    // let pokemonWeightCount = parseInt(pokemon.weight.toString() + '00') / 1000
+    // let pokemonWeight = pokemonWeightCount
+    getPokemonDescription = e => {
+        fetch(this.props.pokemon.species.url)
+            .then((res => res.json()))
+            .then((data => this.setState({ data: data })))
+    }
+    componentDidMount() {
+        this.getPokemonDescription()
+
+    }
     render() {
-        const { pokemon, pokemonSpecies } = this.props;
-        console.log(pokemonSpecies);
+        const { pokemon } = this.props;
+        console.log(this.state.data);
         return (
             <div className={'pop-up-detail-bg'}>
                 <header className={'pop-up-detail-header'}>
@@ -48,7 +53,7 @@ class PopUpPokemonDetail extends Component {
                             </div>
                             <div>
                                 <b> Height:</b> {parseInt(this.props.pokemon.height.toString() + '0') / 100}m
-                                <b>Weight:</b> {parseInt(this.props.pokemon.weight.toString() + '00') / 1000}kg
+                            <b>Weight:</b> {parseInt(this.props.pokemon.weight.toString() + '00') / 1000}kg
                         </div>
                             <p></p>
                         </div>

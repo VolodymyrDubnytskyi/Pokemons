@@ -15,8 +15,8 @@ class PopUpPokemonDetail extends Component {
 
     // }
     render() {
-        const { pokemon, pokemonSpecies } = this.props;
-        console.log(pokemonSpecies);
+        const { pokemon } = this.props;
+        console.log(this.state.data);
         return (
             <div className={'pop-up-detail-bg'}>
                 <header className={'pop-up-detail-header'}>

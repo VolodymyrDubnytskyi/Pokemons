@@ -2,21 +2,33 @@ import React from 'react';
 import { Component } from 'react';
 
 class PopUpPokemonDetail extends Component {
-    // state = {
-    //     data: '',
-    // }
-    // getPokemonDescription = e => {
-    //     fetch(this.props.pokemon.species.url)
-    //         .then((res => res.json()))
-    //         .then((data => this.setState({ data: data })))
-    // }
+    state = {
+        data: '',
+        pokemonHeight: parseInt(this.props.pokemon.height.toString() + '0') / 100,
+        pokemonWeight: parseInt(this.props.pokemon.weight.toString() + '00') / 1000
+    }
+    // let pokemonHeight = parseInt(pokemon.height.toString() + '0') / 100
+    // let pokemonHeightCount = pokemonHeight
+
+    // let pokemonWeightCount = parseInt(pokemon.weight.toString() + '00') / 1000
+    // let pokemonWeight = pokemonWeightCount
+    getPokemonDescription = e => {
+        this.setState({
+            pokemonHeight: parseInt(this.props.pokemon.height.toString() + '0') / 100,
+            pokemonWeight: parseInt(this.props.pokemon.weight.toString() + '00') / 1000
+        })
+        fetch(this.props.pokemon.species.url)
+            .then((res => res.json()))
+            .then((data => this.setState({ data: data })))
+    }
     // componentDidMount() {
-    //     this.getPokemonDescription()
+
 
     // }
     render() {
-        const { pokemon, pokemonSpecies } = this.props;
-        console.log(pokemonSpecies);
+        const { pokemon } = this.props;
+        this.props.activePopUp && this.getPokemonDescription()
+        console.log(this.state.data);
         return (
             <div className={'pop-up-detail-bg'}>
                 <header className={'pop-up-detail-header'}>
@@ -47,8 +59,8 @@ class PopUpPokemonDetail extends Component {
                                 {pokemon.types.map(item => <div>{item.type.name}</div>)}
                             </div>
                             <div>
-                                <b> Height:</b> {parseInt(this.props.pokemon.height.toString() + '0') / 100}m
-                                <b>Weight:</b> {parseInt(this.props.pokemon.weight.toString() + '00') / 1000}kg
+                                <b> Height:</b> {this.state.pokemonHeight}m
+                            <b>Weight:</b> {this.state.pokemonWeight}kg
                         </div>
                             <p></p>
                         </div>
