@@ -23,7 +23,7 @@ class Home extends Component {
     }
 filterPokemons = serchWord =>{
     this.setState({
-        pokemonsDetail: this.state.pokemonsDetail.filter((item)=>item.name.includes(serchWord))
+        pokemonsDetail: this.state.pokemonsDetail.filter((item)=>item.includes(serchWord))
     })
 }
     getPokemonsData = e => {
@@ -56,8 +56,7 @@ filterPokemons = serchWord =>{
         console.log(this.state.clickedPokemonDetail);
         return (
             <section className={'main-bg'}>
-                <Header
-                filterPokemons={this.filterPokemons} />
+                <Header />
                 {this.state.activePopUp && 
                 <PopUpPokemonDetail
                     pokemon={this.state.clickedPokemonDetail}

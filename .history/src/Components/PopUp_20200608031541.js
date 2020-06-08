@@ -44,12 +44,12 @@ class PopUpPokemonDetail extends Component {
                         <div className={`pokemon-detail-menu-item ${this.state.activeClassMenuEl === 2 && 'pokemon-detail-menu-active-item'}`} data-id='2'>Stats</div>
                         <div className={`pokemon-detail-menu-item ${this.state.activeClassMenuEl === 3 && 'pokemon-detail-menu-active-item'}`} data-id='3'>Abilities</div> */}
                     </nav>
-                    {this.state.activeClassMenuEl === 0 ?
+                    {this.state.activeClassMenuEl === 1 ?
                         <BasicInfo
                             pokemon={pokemon}
                         />
                         :
-                        this.state.activeClassMenuEl === 1 ?
+                        this.state.activeClassMenuEl === 2 ?
                             <Stats
                                 pokemon={pokemon}
                             />

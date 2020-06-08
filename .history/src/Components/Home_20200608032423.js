@@ -10,6 +10,7 @@ class Home extends Component {
         clickedPokemonDetail: '',
         activePopUp: false
     }
+
     componentDidMount() {
         fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
             .then(res => res.json())
@@ -21,11 +22,7 @@ class Home extends Component {
                 })
             }))
     }
-filterPokemons = serchWord =>{
-    this.setState({
-        pokemonsDetail: this.state.pokemonsDetail.filter((item)=>item.name.includes(serchWord))
-    })
-}
+
     getPokemonsData = e => {
         this.state.collectionsOfUrl.map((item) => {
             fetch(item.url)
@@ -56,8 +53,7 @@ filterPokemons = serchWord =>{
         console.log(this.state.clickedPokemonDetail);
         return (
             <section className={'main-bg'}>
-                <Header
-                filterPokemons={this.filterPokemons} />
+                <Header />
                 {this.state.activePopUp && 
                 <PopUpPokemonDetail
                     pokemon={this.state.clickedPokemonDetail}

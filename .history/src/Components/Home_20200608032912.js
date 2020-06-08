@@ -23,7 +23,7 @@ class Home extends Component {
     }
 filterPokemons = serchWord =>{
     this.setState({
-        pokemonsDetail: this.state.pokemonsDetail.filter((item)=>item.name.includes(serchWord))
+        pokemonsDetail: this.state.pokemonsDetail.filter((item)=>item.includes(serchWord))
     })
 }
     getPokemonsData = e => {
