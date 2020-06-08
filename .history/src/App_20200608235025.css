@@ -355,11 +355,11 @@
   margin: 6px 0;
 }
 .stats-table-heading div,
-.stats-table-heading span {
+.stats-table-heading span, {
   border-right-color: rgb(5, 6, 8);
   border-bottom-color: rgb(5, 6, 8);
   box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
-  display: inline-block;
+  display: table-cell;
   vertical-align: inherit;
   cursor: default;
   border-style: none solid solid none;
