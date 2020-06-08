@@ -1,7 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 import BasicInfo from './PopUpComponents/BasicInfo';
-import Stats from './PopUpComponents/Stats';
 
 class PopUpPokemonDetail extends Component {
     state = {
@@ -39,8 +38,22 @@ class PopUpPokemonDetail extends Component {
                         pokemon={pokemon}
                         />
                         :
-                       <Stats
-                       pokemon={pokemon}/>
+                        <div className={'stats-container'}>
+                            <div className={'stats-content-container'}>
+                                <div className={'stats-table-heading'}>
+                                    <div className={'stats-table-column'}>Name</div>
+                                    <div>Base</div>
+                                </div>
+                                {pokemon.stats.map((item) => {
+                                    return (
+                                        <div className={'stats'}>
+                                            <div className={'stats-table-column'}>{item.stat.name.charAt(0).toUpperCase() + item.stat.name.slice(1)}</div>
+                                            <div>{item.base_stat}</div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     }
                 </div>
             </div>

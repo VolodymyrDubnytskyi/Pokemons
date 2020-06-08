@@ -322,7 +322,7 @@
   border-right-color: rgb(255, 255, 255);
   border-bottom-color: rgb(255, 255, 255);
   background-color: #fff;
-  height: 100%;
+  height: 80%;
 }
 .stats-content-container::before {
   position: absolute;
@@ -353,7 +353,6 @@
 }
 .stats {
   padding: 0 10px;
-  margin: 6px 0;
 }
 .stats-table-heading div {
   border-right-color: rgb(5, 6, 8);
@@ -372,6 +371,6 @@
 .stats-table-colum-lg {
   width: 80%;
 }
-.stats-table-column-sm {
+.stats-table-column-sm{
   width: 20%;
 }
