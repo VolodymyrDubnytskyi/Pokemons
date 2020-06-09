@@ -28,7 +28,7 @@ class Home extends Component {
                 .then((result) => {
                     this.setState({
                         pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b) => a.id - b.id),
-                        pokemonDetailDefault: this.state.pokemonsDetail
+                        pokemonsDetailCopy: [...this.state.pokemonsDetailCopy, result].sort((a, b) => a.id - b.id)
                     })
                 })
         })
@@ -49,7 +49,7 @@ class Home extends Component {
     closePopUp = e => this.setState({ activePopUp: false })
     filterPokemons = serchWord => {
         this.setState({
-            pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(serchWord))
+            pokemonsDetail: this.state.pokemonsDetail.filter((item) => item.name.includes(serchWord))
         })
     }
     render() {
