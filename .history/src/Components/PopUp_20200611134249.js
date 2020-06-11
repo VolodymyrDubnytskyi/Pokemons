@@ -3,7 +3,6 @@ import { Component } from 'react';
 import BasicInfo from './PopUpComponents/BasicInfo';
 import Stats from './PopUpComponents/Stats';
 import Abilities from './PopUpComponents/Abilities';
-import Menu from './HeaderComponents/Menu';
 
 const menu = ['Basic Info', 'Info', 'Abilities']
 

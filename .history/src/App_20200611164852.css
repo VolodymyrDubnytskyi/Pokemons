@@ -451,9 +451,6 @@ button {
   margin: 0px;
 }
 .aboutPopUp-container p,
-.aboutPopUp-container h1{
+.aboutPopUp-container h2{
   margin: 10px 5px;
-}
-.aboutPopUp-container p{
-  font-size: 18px;
 }

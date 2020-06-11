@@ -31,6 +31,7 @@ class PopUpPokemonDetail extends Component {
                 <div className={'exit-link-container'}>
                     <button className={'disabled-text-btn'}>File</button>
                     <button className={'active-text-btn'} onClick={() => closePopUp()}>Exit</button>
+                    <Menu />
                 </div>
                 <div className={'pokemon-detail'}>
                     <nav className={'pokemon-detail-menu'} onClick={this.menuTabs}>

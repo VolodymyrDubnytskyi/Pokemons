@@ -450,10 +450,3 @@ button {
   border-top: 2px solid rgb(136, 140, 143);
   margin: 0px;
 }
-.aboutPopUp-container p,
-.aboutPopUp-container h1{
-  margin: 10px 5px;
-}
-.aboutPopUp-container p{
-  font-size: 18px;
-}

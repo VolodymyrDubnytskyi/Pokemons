@@ -151,8 +151,7 @@
   min-height: 400px;
   width: 600px;
 }
-.pop-up-detail-header,
-.aboutPopUp-header {
+.pop-up-detail-header {
   height: 33px;
   display: flex;
   align-items: center;
@@ -449,11 +448,4 @@ button {
   border-bottom: 2px solid rgb(255, 255, 255);
   border-top: 2px solid rgb(136, 140, 143);
   margin: 0px;
-}
-.aboutPopUp-container p,
-.aboutPopUp-container h1{
-  margin: 10px 5px;
-}
-.aboutPopUp-container p{
-  font-size: 18px;
 }
