@@ -20,7 +20,7 @@
   max-width: 1380px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 160px);
+  grid-template-columns: repeat(auto-fit, 140px);
   justify-content: center;
 }
 .pokemon-container {

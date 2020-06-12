@@ -54,8 +54,7 @@ class Header extends Component {
                         </div>
                     </nav>
                 </header>
-                {this.state.aboutProjectPopUp && <AboutPopUp
-                closeAboutPopUp={this.closeAboutPopUp} />}
+                {this.state.aboutProjectPopUp && <AboutPopUp />}
             </>
         );
     }

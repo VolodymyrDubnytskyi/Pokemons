@@ -26,11 +26,6 @@ class Header extends Component {
             activeMenu: false
         })
     }
-    closeAboutPopUp = e => { 
-        this.setState({
-            aboutProjectPopUp: false
-        }) 
-    }
     render() {
         return (
             <>
@@ -54,8 +49,7 @@ class Header extends Component {
                         </div>
                     </nav>
                 </header>
-                {this.state.aboutProjectPopUp && <AboutPopUp
-                closeAboutPopUp={this.closeAboutPopUp} />}
+                {this.state.aboutProjectPopUp && <AboutPopUp />}
             </>
         );
     }

@@ -20,7 +20,7 @@
   max-width: 1380px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 160px);
+  grid-template-columns: repeat(6, 140px);
   justify-content: center;
 }
 .pokemon-container {
@@ -454,7 +454,6 @@ button {
   margin-top: 1rem;
 }
 .aboutPopUp-container h1{
-  font-weight: 400;
   font-size: 2rem;
 }
 .aboutPopUp-container p {

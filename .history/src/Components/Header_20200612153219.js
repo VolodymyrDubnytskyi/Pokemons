@@ -21,15 +21,7 @@ class Header extends Component {
         })
     }
     showAboutPopUp = e => {
-        this.setState({
-            aboutProjectPopUp: true,
-            activeMenu: false
-        })
-    }
-    closeAboutPopUp = e => { 
-        this.setState({
-            aboutProjectPopUp: false
-        }) 
+        this.setState({aboutProjectPopUp: true})
     }
     render() {
         return (
@@ -42,8 +34,8 @@ class Header extends Component {
                                 className={'windows-logo'} />
                        Poké95
                     </button>
-                        {this.state.activeMenu && <Menu
-                            showAboutPopUp={this.showAboutPopUp} />}
+                        {this.state.activeMenu && <Menu 
+                        showAboutPopUp={this.showAboutPopUp}/>}
                         <div className={'input-container'}>
                             <input
                                 className={'search-input'}
@@ -55,7 +47,7 @@ class Header extends Component {
                     </nav>
                 </header>
                 {this.state.aboutProjectPopUp && <AboutPopUp
-                closeAboutPopUp={this.closeAboutPopUp} />}
+                aboutProjectPopUp={this.aboutProjectPopUp} />}
             </>
         );
     }
