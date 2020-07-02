@@ -47,7 +47,6 @@ class PopUpPokemonDetail extends Component {
                         this.state.activeClassMenuEl === 0 ?
                             <BasicInfo
                                 pokemon={pokemon}
-                                pokemonSpecies={pokemonSpecies}
                             />
                             :
                             this.state.activeClassMenuEl === 1 ?

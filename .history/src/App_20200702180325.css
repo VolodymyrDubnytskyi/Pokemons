@@ -238,7 +238,6 @@
 }
 .pokemon-detail-menu {
   height: 10%;
-  margin-bottom: 4px;
 }
 .pokemon-detail-menu-item {
   box-sizing: border-box;
@@ -299,7 +298,6 @@
 }
 .stats-container,
 .abilities-container {
-  z-index: 1;
   background-color: rgb(206, 208, 207);
   color: rgb(5, 6, 8);
   border-left-color: rgb(255, 255, 255);

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const BasicInfo = props => {
-    const { pokemon, pokemonSpecies } = props;
-    console.log(pokemonSpecies);
+    const { pokemon } = props;
+    console.log(pokemon);
     return (
         <div className={'pokemon-detail-content'}>
             <div className={'pokemon-detail-img-container'}>

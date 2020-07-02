@@ -7,7 +7,7 @@ const Stats = props => {
             <div className={'stats-content-container'}>
                 <div className={'stats-table-heading'}>
                     <div className={'table-column-heading table-column-heading-lg'}>Name</div>
-                    <div className={'table-column-heading table-column-heading-s'}>Base</div>
+                    <div className={'table-column-heading'}>Base</div>
                 </div>
                 {pokemon.stats.map((item) => {
                     return (

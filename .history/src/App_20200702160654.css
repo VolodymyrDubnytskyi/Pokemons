@@ -218,7 +218,6 @@
 .pokemon-detail-menu {
   display: flex;
   align-items: center;
-  padding-left: 8px;
 }
 .pokemon-detail-content {
   background-color: var(--menu-bg-color);
@@ -238,7 +237,6 @@
 }
 .pokemon-detail-menu {
   height: 10%;
-  margin-bottom: 4px;
 }
 .pokemon-detail-menu-item {
   box-sizing: border-box;
@@ -247,7 +245,7 @@
   border-left-color: rgb(255, 255, 255);
   border-top-color: rgb(255, 255, 255);
   border-right-color: rgb(5, 6, 8);
-  box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px 1px 0px 1px inset;
+  box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
   position: relative;
   height: 35px;
   line-height: 35px;
@@ -257,19 +255,29 @@
   cursor: default;
   color: rgb(5, 6, 8);
   border-style: solid solid none;
+  border-width: 2px 2px 2px;
   padding: 0px 0.5rem;
   border-bottom: none;
 }
 .pokemon-detail-menu-active-item {
+  background-color: rgb(206, 208, 207);
+  border-left-color: rgb(255, 255, 255);
+  border-top-color: rgb(255, 255, 255);
+  border-right-color: rgb(5, 6, 8);
+  box-shadow: rgb(223, 224, 227) 1px 0px 0px 0px inset, rgb(136, 140, 143) -1px 0px 0px 0px inset;
+  position: relative;
+  line-height: 35px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: default;
+  color: rgb(5, 6, 8);
   z-index: 1;
   height: calc(39px);
-  top: -4px;
-  margin-bottom: -6px;
-  margin-left: -8px;
-  margin-right: -8px;
   border-style: solid solid none;
+  border-width: 2px 2px 2px;
   border-bottom: none;
   padding: 0px calc(0.5rem + 8px);
+  margin-bottom: 4px;
 }
 .pokemon-detail-img-container {
   width: 40%;
@@ -297,9 +305,7 @@
   justify-content: center;
   align-items: center;
 }
-.stats-container,
-.abilities-container {
-  z-index: 1;
+.stats-container {
   background-color: rgb(206, 208, 207);
   color: rgb(5, 6, 8);
   border-left-color: rgb(255, 255, 255);
@@ -311,8 +317,7 @@
   border-width: 2px;
   padding: calc(1.5rem) 1rem 1rem;
 }
-.stats-content-container,
-.abilities-content-container {
+.stats-content-container {
   width: 100%;
   position: relative;
   border: 2px solid;
@@ -323,12 +328,7 @@
   background-color: #fff;
   height: 100%;
 }
-.abilities-content-container {
-  display: grid;
-  grid-template-columns: 50% 20% 30%;
-}
-.stats-content-container::before,
-.abilities-content-container::before {
+.stats-content-container::before {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -349,7 +349,6 @@
   justify-content: center;
   align-items: center;
 }
-.stats-table-heading,
 .stats {
   display: flex;
   justify-content: space-between;
@@ -359,11 +358,10 @@
   padding: 0 10px;
   margin: 6px 0;
 }
-.table-column-heading {
+.stats-table-heading th {
   border-right-color: rgb(5, 6, 8);
   border-bottom-color: rgb(5, 6, 8);
   box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
-  display: inline-block;
   vertical-align: inherit;
   cursor: default;
   border-style: none solid solid none;
@@ -373,14 +371,11 @@
   border-left: none;
   border-top: none;
 }
-.table-column-heading-lg {
+.stats-table-colum-lg {
   width: 80%;
 }
-.table-column-heading-s {
+.stats-table-column-sm {
   width: 20%;
-}
-.table-column {
-  padding: 5px 10px;
 }
 .active-btn {
   box-sizing: border-box;
@@ -456,7 +451,7 @@ button {
 .aboutPopUp-container p {
   margin-top: 1rem;
 }
-.aboutPopUp-container h1 {
+.aboutPopUp-container h1{
   font-weight: 400;
   font-size: 2rem;
 }
