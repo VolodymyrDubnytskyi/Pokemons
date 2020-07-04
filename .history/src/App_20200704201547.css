@@ -410,7 +410,7 @@
   padding: 2px 0.5rem 0px;
 }
 .stats:hover,
-.abilities-column-container:hover {
+.table-column:hover {
   background: var(--active-color-gradient);
   color: #fff;
 }
