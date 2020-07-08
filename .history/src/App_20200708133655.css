@@ -211,7 +211,7 @@
   text-shadow: rgb(255, 255, 255) 1px 1px;
 }
 .pokemon-detail {
-  width: 95%;
+  width: 80%;
   height: 270px;
   margin: 20px auto auto auto;
 }
