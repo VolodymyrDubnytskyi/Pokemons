@@ -1,9 +1,17 @@
 import React from 'react';
 import TypeColors from '../../assets/typeColors'
-import { useState } from 'react';
 
 const BasicInfo = props => {
     const { pokemon, pokemonSpecies } = props;
+    // console.log(pokemonSpecies);
+    let typeColor;
+    const getTypeColor = clickedPokeColor => {
+        for (const [key, value] of Object.entries(TypeColors)) {
+            typeColor = clickedPokeColor === key && value 
+            console.log(typeColor);
+            // console.log(`${key}: ${value}`);
+          }
+    }
     return (
         <div className={'pokemon-detail-content'}>
             <div className={'pokemon-detail-img-container'}>
@@ -15,9 +23,9 @@ const BasicInfo = props => {
                 </h2>
                 <div className={'pokemon-detail-type-of-pokemon'}>
                     {pokemon.types.map((item, index) => {
-                        Object.keys(TypeColors).map((key)=> TypeColors[key])
-                        console.log(Object.keys(TypeColors).map((key)=> TypeColors[key]));                      
-                        return <div key={index} style={{ backgroundColor: TypeColors[item.type.name]}}>{item.type.name}</div>
+                        // const colors = TypeColors
+                        getTypeColor(item.type.name);
+                        return <div key={index} style={{ backgroundColor: `${typeColor}`}}>{item.type.name}</div>
                     })}
                 </div>
                 <div>

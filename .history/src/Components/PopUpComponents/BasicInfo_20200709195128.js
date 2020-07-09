@@ -17,7 +17,7 @@ const BasicInfo = props => {
                     {pokemon.types.map((item, index) => {
                         Object.keys(TypeColors).map((key)=> TypeColors[key])
                         console.log(Object.keys(TypeColors).map((key)=> TypeColors[key]));                      
-                        return <div key={index} style={{ backgroundColor: TypeColors[item.type.name]}}>{item.type.name}</div>
+                        return <div key={index} style={{ backgroundColor: ''}}>{item.type.name}</div>
                     })}
                 </div>
                 <div>

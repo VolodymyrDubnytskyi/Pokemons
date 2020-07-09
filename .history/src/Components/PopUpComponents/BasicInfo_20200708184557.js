@@ -1,9 +1,9 @@
 import React from 'react';
 import TypeColors from '../../assets/typeColors'
-import { useState } from 'react';
 
 const BasicInfo = props => {
     const { pokemon, pokemonSpecies } = props;
+    console.log(pokemonSpecies);
     return (
         <div className={'pokemon-detail-content'}>
             <div className={'pokemon-detail-img-container'}>
@@ -14,10 +14,10 @@ const BasicInfo = props => {
                     {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}#{pokemon.id}
                 </h2>
                 <div className={'pokemon-detail-type-of-pokemon'}>
-                    {pokemon.types.map((item, index) => {
-                        Object.keys(TypeColors).map((key)=> TypeColors[key])
-                        console.log(Object.keys(TypeColors).map((key)=> TypeColors[key]));                      
-                        return <div key={index} style={{ backgroundColor: TypeColors[item.type.name]}}>{item.type.name}</div>
+                    {pokemon.types.map((item, index) => { 
+                        const colors = TypeColors
+                        colors.map((el)=> console.log(el))
+                        return <div key={index} style={{backgroundColor: ``}}>{item.type.name}</div>
                     })}
                 </div>
                 <div>

@@ -4,6 +4,14 @@ import { useState } from 'react';
 
 const BasicInfo = props => {
     const { pokemon, pokemonSpecies } = props;
+    // // console.log(pokemonSpecies);
+    // const [ type, setType]= useState('')
+    // const getTypeColor = clickedPokeColor => {
+    //     for (const [key, value] of Object.entries(TypeColors)) {
+    //          return setType(key === clickedPokeColor)
+    //         // console.log(`${key}: ${value}`);
+    //       }
+    // }
     return (
         <div className={'pokemon-detail-content'}>
             <div className={'pokemon-detail-img-container'}>
@@ -15,9 +23,9 @@ const BasicInfo = props => {
                 </h2>
                 <div className={'pokemon-detail-type-of-pokemon'}>
                     {pokemon.types.map((item, index) => {
-                        Object.keys(TypeColors).map((key)=> TypeColors[key])
-                        console.log(Object.keys(TypeColors).map((key)=> TypeColors[key]));                      
-                        return <div key={index} style={{ backgroundColor: TypeColors[item.type.name]}}>{item.type.name}</div>
+                        // const colors = TypeColors
+                       
+                        return <div key={index} style={{ backgroundColor: `${type}`}}>{item.type.name}</div>
                     })}
                 </div>
                 <div>
