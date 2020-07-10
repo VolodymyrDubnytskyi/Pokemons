@@ -33,7 +33,7 @@ class Home extends Component {
                         pokemonDetailDefault: this.state.pokemonsDetail,
                         isLoaded: true
                     }, ()=>{
-                        setTimeout(()=>{ this.setState({isLoaded:true})}, 6000 )
+                        // setTimeout(()=>{ this.setState({isLoaded:true})}, 5000 )
                     })
                 })
         })

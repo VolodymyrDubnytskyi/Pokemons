@@ -290,7 +290,7 @@
 }
 .pokemon-detail-type-of-pokemon {
   color: rgb(255, 255, 255);
-  margin: 12px 0 10px 0;
+  margin: 10px 0;
   display: flex;
   align-items: center;
 }

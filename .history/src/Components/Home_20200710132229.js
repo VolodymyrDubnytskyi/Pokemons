@@ -2,7 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import Header from './Header';
 import PopUpPokemonDetail from './PopUp';
-import LoadingScreen from './LoadingScreen/LoadingScreen';
 
 class Home extends Component {
     state = {
@@ -32,8 +31,6 @@ class Home extends Component {
                         pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b) => a.id - b.id),
                         pokemonDetailDefault: this.state.pokemonsDetail,
                         isLoaded: true
-                    }, ()=>{
-                        setTimeout(()=>{ this.setState({isLoaded:true})}, 6000 )
                     })
                 })
         })
@@ -62,7 +59,6 @@ class Home extends Component {
     render() {
         return (
             <section className={'main-bg'}>
-                {this.state.isLoaded ? <>
                 <Header
                     filterPokemons={this.filterPokemons} />
                 {this.state.activePopUp &&
@@ -79,16 +75,13 @@ class Home extends Component {
                                 onDoubleClick={() => this.checkPokemonDetail(item)}
                                 key={i}
                             >
-                                <img src={item.sprites.front_default} alt="pokemon-image" />
+                                <img src={this.state.isLoaded ? item.sprites.front_default : '../assets/pokeball.png'} alt="pokemon-image" />
                                 <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h3>
                             </div>
                         );
                     })}
                 </div>
-                </> : <LoadingScreen/>}
-                
             </section>
-            
         );
     }
 }

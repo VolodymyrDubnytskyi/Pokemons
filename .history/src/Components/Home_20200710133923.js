@@ -30,10 +30,9 @@ class Home extends Component {
                 .then((result) => {
                     this.setState({
                         pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b) => a.id - b.id),
-                        pokemonDetailDefault: this.state.pokemonsDetail,
-                        isLoaded: true
+                        pokemonDetailDefault: this.state.pokemonsDetail
                     }, ()=>{
-                        setTimeout(()=>{ this.setState({isLoaded:true})}, 6000 )
+                        setTimeout(()=>{ this.setState({isLoaded:true})}, 5000 )
                     })
                 })
         })

@@ -3,7 +3,7 @@ import TypeColors from '../../assets/typeColors'
 
 const BasicInfo = props => {
     const { pokemon, pokemonSpecies } = props;
-    console.log(pokemonSpecies);
+    console.log(pokemonSpecies.flavor_text_entries);
     return (
         <div className={'pokemon-detail-content'}>
             <div className={'pokemon-detail-img-container'}>

@@ -2,15 +2,13 @@ import React from 'react';
 import { Component } from 'react';
 import Header from './Header';
 import PopUpPokemonDetail from './PopUp';
-import LoadingScreen from './LoadingScreen/LoadingScreen';
 
 class Home extends Component {
     state = {
         collectionsOfUrl: '',
         pokemonsDetail: [],
         clickedPokemonDetail: '',
-        activePopUp: false,
-        isLoaded: false
+        activePopUp: false
     }
     componentDidMount() {
         fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
@@ -30,10 +28,7 @@ class Home extends Component {
                 .then((result) => {
                     this.setState({
                         pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b) => a.id - b.id),
-                        pokemonDetailDefault: this.state.pokemonsDetail,
-                        isLoaded: true
-                    }, ()=>{
-                        setTimeout(()=>{ this.setState({isLoaded:true})}, 6000 )
+                        pokemonDetailDefault: this.state.pokemonsDetail
                     })
                 })
         })
@@ -45,11 +40,11 @@ class Home extends Component {
     }
 
     checkPokemonDetail = pokemon => {
-        this.getPokemonSpecies(pokemon)
         this.setState({
             clickedPokemonDetail: pokemon,
             activePopUp: true
         })
+        this.getPokemonSpecies(pokemon)
     }
     
     closePopUp = e => this.setState({ activePopUp: false })
@@ -62,7 +57,6 @@ class Home extends Component {
     render() {
         return (
             <section className={'main-bg'}>
-                {this.state.isLoaded ? <>
                 <Header
                     filterPokemons={this.filterPokemons} />
                 {this.state.activePopUp &&
@@ -85,10 +79,7 @@ class Home extends Component {
                         );
                     })}
                 </div>
-                </> : <LoadingScreen/>}
-                
             </section>
-            
         );
     }
 }

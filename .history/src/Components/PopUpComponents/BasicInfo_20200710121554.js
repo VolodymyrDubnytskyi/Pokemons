@@ -3,7 +3,6 @@ import TypeColors from '../../assets/typeColors'
 
 const BasicInfo = props => {
     const { pokemon, pokemonSpecies } = props;
-    console.log(pokemonSpecies);
     return (
         <div className={'pokemon-detail-content'}>
             <div className={'pokemon-detail-img-container'}>
@@ -25,7 +24,7 @@ const BasicInfo = props => {
                     <b>Height:</b> {+(pokemon.height + '0') / 100}m
                     <b>Weight:</b> {+(pokemon.weight + '00') / 1000}kg
                 </div>
-                {/* <p>{pokemonSpecies.flavor_text_entries.flavor_text}</p> */}
+                <p>{pokemonSpecies.flavor_text_entries.flavor_text}</p>
             </div>
         </div>
     );

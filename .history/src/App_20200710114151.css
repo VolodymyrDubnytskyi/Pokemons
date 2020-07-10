@@ -290,15 +290,15 @@
 }
 .pokemon-detail-type-of-pokemon {
   color: rgb(255, 255, 255);
-  margin: 12px 0 10px 0;
+  padding: 4px;
   display: flex;
   align-items: center;
 }
-.pokemon-type {
-  padding: 5px;
+.pokemon-type{
+
 }
-.pokemon-type:first-of-type {
-  margin-right: 7px;
+.pokemon-type:first-of-type{
+  margin-right: 5px;
 }
 .stats-container,
 .abilities-container {

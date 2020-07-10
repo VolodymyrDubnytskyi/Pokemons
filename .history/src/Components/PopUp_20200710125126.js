@@ -36,9 +36,6 @@ class PopUpPokemonDetail extends Component {
                 </div>
                 <PokemonDetail
                 activeClassMenuEl={this.state.activeClassMenuEl}
-                pokemon={pokemon}
-                pokemonSpecies={pokemonSpecies}
-                menuTabs={this.menuTabs}
                 />
                 {/* <div className={'pokemon-detail'}>
                     <nav className={'pokemon-detail-menu'} onClick={this.menuTabs}>

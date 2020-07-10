@@ -2,7 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import Header from './Header';
 import PopUpPokemonDetail from './PopUp';
-import LoadingScreen from './LoadingScreen/LoadingScreen';
 
 class Home extends Component {
     state = {
@@ -32,8 +31,6 @@ class Home extends Component {
                         pokemonsDetail: [...this.state.pokemonsDetail, result].sort((a, b) => a.id - b.id),
                         pokemonDetailDefault: this.state.pokemonsDetail,
                         isLoaded: true
-                    }, ()=>{
-                        setTimeout(()=>{ this.setState({isLoaded:true})}, 6000 )
                     })
                 })
         })
@@ -62,7 +59,6 @@ class Home extends Component {
     render() {
         return (
             <section className={'main-bg'}>
-                {this.state.isLoaded ? <>
                 <Header
                     filterPokemons={this.filterPokemons} />
                 {this.state.activePopUp &&
@@ -85,10 +81,7 @@ class Home extends Component {
                         );
                     })}
                 </div>
-                </> : <LoadingScreen/>}
-                
             </section>
-            
         );
     }
 }

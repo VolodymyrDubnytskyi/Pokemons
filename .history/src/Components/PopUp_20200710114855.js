@@ -4,9 +4,8 @@ import BasicInfo from './PopUpComponents/BasicInfo';
 import Stats from './PopUpComponents/Stats';
 import Abilities from './PopUpComponents/Abilities';
 import Menu from './HeaderComponents/Menu';
-import PokemonDetail from './PopUpComponents/PokemonDetail';
 
-// const menu = ['Basic Info', 'Stats', 'Abilities']
+const menu = ['Basic Info', 'Stats', 'Abilities']
 
 class PopUpPokemonDetail extends Component {
     state = {
@@ -34,13 +33,7 @@ class PopUpPokemonDetail extends Component {
                     <button className={'disabled-text-btn'}>File</button>
                     <button className={'active-text-btn'} onClick={() => closePopUp()}>Exit</button>
                 </div>
-                <PokemonDetail
-                activeClassMenuEl={this.state.activeClassMenuEl}
-                pokemon={pokemon}
-                pokemonSpecies={pokemonSpecies}
-                menuTabs={this.menuTabs}
-                />
-                {/* <div className={'pokemon-detail'}>
+                <div className={'pokemon-detail'}>
                     <nav className={'pokemon-detail-menu'} onClick={this.menuTabs}>
                         {menu.map((item, i) => {
                             return (
@@ -52,10 +45,22 @@ class PopUpPokemonDetail extends Component {
                             );
                         })}
                     </nav>
-                    {this.state.activeClassMenuEl === 0 && <BasicInfo pokemon={pokemon} pokemonSpecies={pokemonSpecies}/>}
-                    {this.state.activeClassMenuEl === 1 && <Stats pokemon={pokemon}/>}
-                    {this.state.activeClassMenuEl === 2 && <Abilities pokemon={pokemon} />}            
-                </div> */}
+                    {
+                        this.state.activeClassMenuEl === 0 ?
+                            <BasicInfo
+                                pokemon={pokemon}
+                                pokemonSpecies={pokemonSpecies}
+                            />
+                            :
+                            this.state.activeClassMenuEl === 1 ?
+                                <Stats
+                                    pokemon={pokemon}
+                                />
+                                :
+                                <Abilities
+                                    pokemon={pokemon} />
+                    }
+                </div>
             </div>
         );
     }
