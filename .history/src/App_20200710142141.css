@@ -206,11 +206,6 @@
   border: 2px solid transparent;
   font-weight: 500;
 }
-.active-text-btn{
-  border:  2px solid rgb(255, 255, 255);
-  border-right-color: rgb(136, 140, 143);
-  border-bottom-color: rgb(136, 140, 143);
-}
 .disabled-text-btn {
   color: rgb(136, 140, 143);
   text-shadow: rgb(255, 255, 255) 1px 1px;
@@ -304,12 +299,6 @@
 }
 .pokemon-type:first-of-type {
   margin-right: 7px;
-}
-.pokemon-description{
-  margin-top: 10px;
-}
-.pokemon-height-and-weight{
-
 }
 .stats-container,
 .abilities-container {

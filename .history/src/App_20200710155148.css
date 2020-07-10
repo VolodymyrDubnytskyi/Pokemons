@@ -206,10 +206,12 @@
   border: 2px solid transparent;
   font-weight: 500;
 }
-.active-text-btn{
-  border:  2px solid rgb(255, 255, 255);
+.active-text-btn:hover{
+  /* border-left-color: rgb(255, 255, 255);
+  border-top-color: rgb(255, 255, 255);
   border-right-color: rgb(136, 140, 143);
-  border-bottom-color: rgb(136, 140, 143);
+  border-bottom-color: rgb(136, 140, 143); */
+ border:  2px solid rgb(255, 255, 255) rgb(136, 140, 143);
 }
 .disabled-text-btn {
   color: rgb(136, 140, 143);

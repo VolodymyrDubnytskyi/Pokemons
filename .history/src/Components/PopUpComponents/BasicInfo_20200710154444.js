@@ -24,21 +24,13 @@ const BasicInfo = props => {
                             })}
                         </div>
                         <div className={'pokemon-height-and-weight'}>
-                            <span>
-                                <b>Height:</b>
-                                {+(pokemon.height + '0') / 100}m
-                            </span>
-                            <span>
-                                <b>Weight:</b>
-                                {+(pokemon.weight + '00') / 1000}kg
-                            </span>
+                            <span><b>Height:</b> {+(pokemon.height + '0') / 100}m</span>
+                            <span> <b>Weight:</b> {+(pokemon.weight + '00') / 1000}kg</span>
                         </div>
                         <p className={'pokemon-description'}>{pokemonSpecies.flavor_text_entries[9].flavor_text}</p>
                     </div>
-                </>
-                :
-                <LoadingScreen />
-            }
+                </> : <LoadingScreen />}
+
         </div>
     );
 }

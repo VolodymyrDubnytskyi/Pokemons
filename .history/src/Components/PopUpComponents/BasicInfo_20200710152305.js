@@ -1,9 +1,9 @@
 import React from 'react';
 import TypeColors from '../../assets/typeColors'
-import LoadingScreen from '../LoadingScreen/LoadingScreen'
 
 const BasicInfo = props => {
     const { pokemon, pokemonSpecies } = props;
+    console.log(pokemonSpecies);
     return (
         <div className={'pokemon-detail-content'}>
             {pokemonSpecies !== undefined ?
@@ -23,22 +23,14 @@ const BasicInfo = props => {
                                     className={'pokemon-type'}>{item.type.name}</div>
                             })}
                         </div>
-                        <div className={'pokemon-height-and-weight'}>
-                            <span>
-                                <b>Height:</b>
-                                {+(pokemon.height + '0') / 100}m
-                            </span>
-                            <span>
-                                <b>Weight:</b>
-                                {+(pokemon.weight + '00') / 1000}kg
-                            </span>
-                        </div>
-                        <p className={'pokemon-description'}>{pokemonSpecies.flavor_text_entries[9].flavor_text}</p>
+                        <div>
+                            <b>Height:</b> {+(pokemon.height + '0') / 100}m
+                    <b>Weight:</b> {+(pokemon.weight + '00') / 1000}kg
+                </div>
+                        <p>{pokemonSpecies.flavor_text_entries.flavor_text}</p>
                     </div>
-                </>
-                :
-                <LoadingScreen />
-            }
+                </> : <LoadingScreen/>}
+
         </div>
     );
 }
