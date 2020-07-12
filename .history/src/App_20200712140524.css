@@ -91,9 +91,6 @@
 .nav-menu-btn:first-of-type{
   margin-right: 5px;
 }
-.pokemon-dvd-loaded-btn{
-  display: none;
-}
 .windows-logo {
   transform: rotate(-20deg);
   margin-right: 5px;
@@ -212,7 +209,7 @@
   border: 2px solid transparent;
   font-weight: 500;
 }
-.active-text-btn:hover{
+.active-text-btn{
   border:  2px solid rgb(255, 255, 255);
   border-right-color: rgb(136, 140, 143);
   border-bottom-color: rgb(136, 140, 143);

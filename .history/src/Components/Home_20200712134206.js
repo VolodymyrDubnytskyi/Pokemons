@@ -13,8 +13,7 @@ class Home extends Component {
         clickedPokemonDetail: '',
         activePopUp: false,
         isLoaded: false,
-        imgLoaded: 0,
-        dvdIcon: false
+        imgLoaded: 0
     }
     componentDidMount() {
         fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
@@ -54,19 +53,12 @@ class Home extends Component {
         })
     }
 
-    activePokemonPopUp = e => {
-        this.setState({
-            activePopUp: !this.state.activePopUp,
-            dvdIcon: false
-        })
-    }
+    closePopUp = e => this.setState({ activePopUp: false })
+
     filterPokemons = serchWord => {
         this.setState({
             pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(serchWord))
         })
-    }
-    removeDvdIcon = e => {
-        this.setState({ dvdIcon: true })
     }
     // loadingPokemonImg = e => this.setState({imgLoaded: this.state.imgLoaded + 1})
     render() {
@@ -76,18 +68,16 @@ class Home extends Component {
                     <>
                         <Header
                             filterPokemons={this.filterPokemons}
-                            activePopUp={this.state.activePopUp}
-                            activePokemonPopUp={this.activePokemonPopUp}
-                            dvdIcon={this.state.dvdIcon} />
+                            activePopUp={this.state.activePopUp} />
                         {this.state.activePopUp &&
                             <PopUpPokemonDetail
                                 pokemon={this.state.clickedPokemonDetail}
                                 activePopUp={this.state.activePopUp}
                                 pokemonSpecies={this.state.pokemonSpecies}
-                                activePokemonPopUp={this.activePokemonPopUp}
-                                removeDvdIcon={this.removeDvdIcon} />}
+                                closePopUp={this.closePopUp} />}
                         <div className={'content-box'}>
                             {this.state.pokemonsDetail.map((item, i) => {
+                                console.log(item.sprites.front_default);
                                 return (
                                     <div
                                         className={'pokemon-container'}
@@ -95,11 +85,11 @@ class Home extends Component {
                                         key={i}
                                     >
                                         <img
-                                            src={item.sprites.front_default ? item.sprites.front_default : imgPokeball}
+                                            src={item.sprites.front_default? item.sprites.front_default : imgPokeball}
                                             // src={this.state.imgLoaded >= i ? item.sprites.front_default : imgPokeball}
                                             alt="pokemon-image"
-                                            className={'pokeball-img'} />
-                                        {/* onLoad={this.loadingPokemonImg} /> */}
+                                            className={'pokeball-img'}/>
+                                            {/* onLoad={this.loadingPokemonImg} /> */}
                                         <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h3>
                                     </div>
                                 );

@@ -14,7 +14,7 @@ class Home extends Component {
         activePopUp: false,
         isLoaded: false,
         imgLoaded: 0,
-        dvdIcon: false
+        dvdIcon: true
     }
     componentDidMount() {
         fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
@@ -54,19 +54,14 @@ class Home extends Component {
         })
     }
 
-    activePokemonPopUp = e => {
-        this.setState({
-            activePopUp: !this.state.activePopUp,
-            dvdIcon: false
-        })
-    }
+    activePokemonPopUp = e => this.setState({ activePopUp: !this.state.activePopUp })
     filterPokemons = serchWord => {
         this.setState({
             pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(serchWord))
         })
     }
-    removeDvdIcon = e => {
-        this.setState({ dvdIcon: true })
+    removeDvdIcon = e =>{
+        this.setState({dvdIcon: false})
     }
     // loadingPokemonImg = e => this.setState({imgLoaded: this.state.imgLoaded + 1})
     render() {

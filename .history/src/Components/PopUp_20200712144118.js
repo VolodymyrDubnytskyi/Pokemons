@@ -13,10 +13,6 @@ class PopUpPokemonDetail extends Component {
             })
         }
     }
-    closePopUpAndRemoveDvdIcon = e =>{
-        this.props.activePokemonPopUp();
-        this.props.removeDvdIcon();
-    }
     render() {
         const { pokemon, pokemonSpecies, activePokemonPopUp } = this.props;
         console.log(pokemonSpecies)
@@ -24,13 +20,13 @@ class PopUpPokemonDetail extends Component {
             <div className={'pop-up-detail-bg'}>
                 <header className={'pop-up-detail-header'}>
                     Pokemon.exe
-                    <button className={'close-btn'} onClick={this.closePopUpAndRemoveDvdIcon}>
+                    <button className={'close-btn'} onClick={() => activePokemonPopUp()}>
                         X
                     </button>
                 </header>
                 <div className={'exit-link-container'}>
                     <button className={'disabled-text-btn'}>File</button>
-                    <button className={'active-text-btn'} onClick={this.closePopUpAndRemoveDvdIcon}>Exit</button>
+                    <button className={'active-text-btn'} onClick={() => activePokemonPopUp()}>Exit</button>
                 </div>
                 <PokemonDetail
                     activeClassMenuEl={this.state.activeClassMenuEl}

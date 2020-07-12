@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Menu from './HeaderComponents/Menu';
 import AboutPopUp from './AboutPopUp';
+import { Button } from 'react95';
 import { imgDvd } from '../assets/imgDvd'
 
 class Header extends Component {
@@ -33,11 +34,7 @@ class Header extends Component {
             aboutProjectPopUp: false
         })
     }
-    activeDvdPokemon = e => {
-        this.setState({ activePokeDvd: false })
-        this.props.activePokemonPopUp();
-    }
-
+    activeDvdPokemon = e => this.setState({ activePokeDvd: false })
     render() {
         return (
             <>
@@ -51,7 +48,7 @@ class Header extends Component {
                        Poké95
                     </button>
                             <button
-                                className={`${this.state.activePokeDvd || this.props.dvdIcon && 'pokemon-dvd-loaded-btn'} ${this.props.activePopUp ? 'active-btn' : 'nav-menu-btn'}`}
+                                className={`${this.state.activePokeDvd && 'pokemon-dvd-loaded-btn'} ${this.props.activePopUp ? 'active-btn' : 'nav-menu-btn'}`}
                                 onClick={this.activeDvdPokemon}>
                                 <img src={imgDvd} alt="dvd" className={'dvd-img'} />
                             Pokemon

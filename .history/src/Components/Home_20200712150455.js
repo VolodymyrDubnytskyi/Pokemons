@@ -54,19 +54,14 @@ class Home extends Component {
         })
     }
 
-    activePokemonPopUp = e => {
-        this.setState({
-            activePopUp: !this.state.activePopUp,
-            dvdIcon: false
-        })
-    }
+    activePokemonPopUp = e => this.setState({ activePopUp: !this.state.activePopUp })
     filterPokemons = serchWord => {
         this.setState({
             pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(serchWord))
         })
     }
-    removeDvdIcon = e => {
-        this.setState({ dvdIcon: true })
+    removeDvdIcon = e =>{
+        this.setState({dvdIcon: true})
     }
     // loadingPokemonImg = e => this.setState({imgLoaded: this.state.imgLoaded + 1})
     render() {
