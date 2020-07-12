@@ -56,7 +56,7 @@ class Home extends Component {
     activePokemonPopUp = e => {
         this.setState({
             activePopUp: !this.state.activePopUp,
-            dvdIcon: false
+            // dvdIcon: false
         })
     }
     filterPokemons = serchWord => {

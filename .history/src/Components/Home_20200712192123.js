@@ -3,7 +3,7 @@ import { Component } from 'react';
 import Header from './Header/Header';
 import PopUpPokemonDetail from './PopUps/PopUp';
 import LoadingScreen from './LoadingScreen/LoadingScreen';
-import { imgPokeball } from '../constans/images'
+import { imgPokeball } from '../constans/imgDvd'
 
 class Home extends Component {
     state = {
