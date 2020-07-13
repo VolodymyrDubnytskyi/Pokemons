@@ -65,46 +65,42 @@ class Home extends Component {
             pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(serchWord))
         })
     }
-    removeDvdIcon = e => this.setState({ dvdIcon: true })
-    pokemonSelection = pokeIndex => this.setState({ pokemonSelected: pokeIndex })
-    
+    removeDvdIcon = e => {
+        this.setState({ dvdIcon: true })
+    }
+    // loadingPokemonImg = e => this.setState({imgLoaded: this.state.imgLoaded + 1})
     render() {
-        const { activePopUp, pokemonsDetail, dvdIcon, clickedPokemonDetail, pokemonSpecies, isLoaded, pokemonSelected } = this.state;
-        const { activePokemonPopUp, filterPokemons, removeDvdIcon, checkPokemonDetail, pokemonSelection } = this;
         return (
             <section className={'main-bg'}>
-                {isLoaded ?
+                {this.state.isLoaded ?
                     <>
                         <Header
-                            filterPokemons={filterPokemons}
-                            activePopUp={activePopUp}
-                            activePokemonPopUp={activePokemonPopUp}
-                            dvdIcon={dvdIcon} />
-                        {activePopUp &&
+                            filterPokemons={this.filterPokemons}
+                            activePopUp={this.state.activePopUp}
+                            activePokemonPopUp={this.activePokemonPopUp}
+                            dvdIcon={this.state.dvdIcon} />
+                        {this.state.activePopUp &&
                             <PopUpPokemonDetail
-                                pokemon={clickedPokemonDetail}
-                                activePopUp={activePopUp}
-                                pokemonSpecies={pokemonSpecies}
-                                activePokemonPopUp={activePokemonPopUp}
-                                removeDvdIcon={removeDvdIcon} />}
+                                pokemon={this.state.clickedPokemonDetail}
+                                activePopUp={this.state.activePopUp}
+                                pokemonSpecies={this.state.pokemonSpecies}
+                                activePokemonPopUp={this.activePokemonPopUp}
+                                removeDvdIcon={this.removeDvdIcon} />}
                         <div className={'content-box'}>
-                            {pokemonsDetail.map((item, i) => {
-                                const { sprites, name } = item;
+                            {this.state.pokemonsDetail.map((item, i) => {
                                 return (
                                     <div
                                         className={'pokemon-container'}
-                                        onDoubleClick={() => checkPokemonDetail(item)}
-                                        onClick={() => pokemonSelection(i)}
+                                        onDoubleClick={() => this.checkPokemonDetail(item)}
                                         key={i}
                                     >
                                         <img
-                                            src={sprites.front_default ? sprites.front_default : imgPokeball}
+                                            src={item.sprites.front_default ? item.sprites.front_default : imgPokeball}
+                                            // src={this.state.imgLoaded >= i ? item.sprites.front_default : imgPokeball}
                                             alt="pokemon-image"
                                             className={'pokeball-img'} />
-                                        <h3
-                                            className={`pokemon-name ${pokemonSelected === i && 'selected-pokemon'}`}>
-                                            {name.charAt(0).toUpperCase() + name.slice(1)}
-                                        </h3>
+                                        {/* onLoad={this.loadingPokemonImg} /> */}
+                                        <h3 className={'pokemon-name'}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</h3>
                                     </div>
                                 );
                             })}
@@ -112,8 +108,14 @@ class Home extends Component {
                     </>
                     :
                     <LoadingScreen />}
+
             </section>
+
         );
     }
 }
 export default Home;
+
+
+
+// item.sprites.front_default

@@ -2,7 +2,6 @@ import React from 'react';
 import { imgDvd, imgPc } from '../../../constans/images';
 
 const Menu = props => {
-    const {showAboutPopUp} = props;
     return (
         <div className={'nav-menu-container'}>
             <ul>
@@ -10,7 +9,7 @@ const Menu = props => {
                     <img src={imgDvd} alt="window-95-dvd"  className={'menu-icons'}/>
                  GitHub Repo
                  </li>
-                <li className={'menu-item'} onClick={showAboutPopUp}>
+                <li className={'menu-item'} onClick={props.showAboutPopUp}>
                     <img src={imgPc} alt="window-95-computer" className={'menu-icons'} />
                  About
                  </li>

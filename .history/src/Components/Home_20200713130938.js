@@ -67,7 +67,6 @@ class Home extends Component {
     }
     removeDvdIcon = e => this.setState({ dvdIcon: true })
     pokemonSelection = pokeIndex => this.setState({ pokemonSelected: pokeIndex })
-    
     render() {
         const { activePopUp, pokemonsDetail, dvdIcon, clickedPokemonDetail, pokemonSpecies, isLoaded, pokemonSelected } = this.state;
         const { activePokemonPopUp, filterPokemons, removeDvdIcon, checkPokemonDetail, pokemonSelection } = this;

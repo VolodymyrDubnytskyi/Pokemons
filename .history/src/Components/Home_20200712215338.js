@@ -65,12 +65,12 @@ class Home extends Component {
             pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(serchWord))
         })
     }
-    removeDvdIcon = e => this.setState({ dvdIcon: true })
-    pokemonSelection = pokeIndex => this.setState({ pokemonSelected: pokeIndex })
-    
+    removeDvdIcon = e => {
+        this.setState({ dvdIcon: true })
+    }
     render() {
-        const { activePopUp, pokemonsDetail, dvdIcon, clickedPokemonDetail, pokemonSpecies, isLoaded, pokemonSelected } = this.state;
-        const { activePokemonPopUp, filterPokemons, removeDvdIcon, checkPokemonDetail, pokemonSelection } = this;
+        const { activePopUp, pokemonsDetail, dvdIcon, clickedPokemonDetail, pokemonSpecies, isLoaded} = this.state;
+        const {activePokemonPopUp, filterPokemons, removeDvdIcon, checkPokemonDetail} = this;
         return (
             <section className={'main-bg'}>
                 {isLoaded ?
@@ -89,22 +89,18 @@ class Home extends Component {
                                 removeDvdIcon={removeDvdIcon} />}
                         <div className={'content-box'}>
                             {pokemonsDetail.map((item, i) => {
-                                const { sprites, name } = item;
+                                const {sprites, name} = item;
                                 return (
                                     <div
                                         className={'pokemon-container'}
                                         onDoubleClick={() => checkPokemonDetail(item)}
-                                        onClick={() => pokemonSelection(i)}
                                         key={i}
                                     >
                                         <img
                                             src={sprites.front_default ? sprites.front_default : imgPokeball}
                                             alt="pokemon-image"
                                             className={'pokeball-img'} />
-                                        <h3
-                                            className={`pokemon-name ${pokemonSelected === i && 'selected-pokemon'}`}>
-                                            {name.charAt(0).toUpperCase() + name.slice(1)}
-                                        </h3>
+                                        <h3 className={'pokemon-name'}>{name.charAt(0).toUpperCase() + name.slice(1)}</h3>
                                     </div>
                                 );
                             })}
@@ -117,3 +113,7 @@ class Home extends Component {
     }
 }
 export default Home;
+
+
+
+// item.sprites.front_default

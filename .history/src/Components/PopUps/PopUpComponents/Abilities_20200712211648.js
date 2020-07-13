@@ -11,7 +11,7 @@ const { pokemon } = props;
                     <div className={'table-column-heading'}>Hidden</div>
                 </div>
                 {pokemon.abilities.map((item, i) => {
-                    const {ability, slot, is_hidden} = item;
+                    const {abilities, slot, is_hidden} = item;
                     return (
                         <div className={'abilities-grid-container abilities-column-container'} key={i}>
                             <div className={'table-column'} >{ability.name.charAt(0).toUpperCase() + ability.name.slice(1)}</div>

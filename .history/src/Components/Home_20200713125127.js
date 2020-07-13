@@ -67,9 +67,8 @@ class Home extends Component {
     }
     removeDvdIcon = e => this.setState({ dvdIcon: true })
     pokemonSelection = pokeIndex => this.setState({ pokemonSelected: pokeIndex })
-    
     render() {
-        const { activePopUp, pokemonsDetail, dvdIcon, clickedPokemonDetail, pokemonSpecies, isLoaded, pokemonSelected } = this.state;
+        const { activePopUp, pokemonsDetail, dvdIcon, clickedPokemonDetail, pokemonSpecies, isLoaded } = this.state;
         const { activePokemonPopUp, filterPokemons, removeDvdIcon, checkPokemonDetail, pokemonSelection } = this;
         return (
             <section className={'main-bg'}>
@@ -102,7 +101,7 @@ class Home extends Component {
                                             alt="pokemon-image"
                                             className={'pokeball-img'} />
                                         <h3
-                                            className={`pokemon-name ${pokemonSelected === i && 'selected-pokemon'}`}>
+                                            className={`pokemon-name ${this.state.pokemonSelected === i && 'selected-pokemon'}`}>
                                             {name.charAt(0).toUpperCase() + name.slice(1)}
                                         </h3>
                                     </div>

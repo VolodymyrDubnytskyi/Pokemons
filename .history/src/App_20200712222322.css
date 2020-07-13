@@ -31,7 +31,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  cursor: pointer;
 }
 .pokemon-name {
   color: rgb(255, 255, 255);
@@ -89,10 +88,10 @@
   padding: 0px 0.5rem;
   font-weight: 600;
 }
-.nav-menu-btn:first-of-type {
+.nav-menu-btn:first-of-type{
   margin-right: 5px;
 }
-.pokemon-dvd-loaded-btn {
+.pokemon-dvd-loaded-btn{
   display: none;
 }
 .windows-logo {
@@ -213,8 +212,8 @@
   border: 2px solid transparent;
   font-weight: 500;
 }
-.active-text-btn:hover {
-  border: 2px solid rgb(255, 255, 255);
+.active-text-btn:hover{
+  border:  2px solid rgb(255, 255, 255);
   border-right-color: rgb(136, 140, 143);
   border-bottom-color: rgb(136, 140, 143);
 }
@@ -224,7 +223,8 @@
 }
 .pokemon-detail {
   width: 95%;
-  margin: 20px auto 10px auto;
+  height: 270px;
+  margin: 20px auto auto auto;
 }
 .pokemon-detail-menu {
   display: flex;
@@ -311,10 +311,11 @@
 .pokemon-type:first-of-type {
   margin-right: 7px;
 }
-.pokemon-description {
+.pokemon-description{
   margin-top: 10px;
 }
-.pokemon-height-and-weight {
+.pokemon-height-and-weight{
+
 }
 .stats-container,
 .abilities-container {
@@ -495,62 +496,22 @@ button {
 .aboutPopUp-content-container {
   padding: 1rem;
 }
-.windows-loader {
+.windows-loader{
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
 }
-.pokeball-img {
+.pokeball-img{
   width: 50%;
   height: 70%;
 }
-.dvd-img {
+.dvd-img{
   height: 65%;
   width: 20%;
   margin-right: 5px;
 }
-.navbar-btn-container {
+.navbar-btn-container{
   display: flex;
   align-items: center;
-}
-.selected-pokemon {
-  background-color: rgb(0, 0, 128);
-}
-.pokemon-height{
-  margin-right: 10px;
-}
-.pokemon-height b,
-.pokemon-weight b{
-  margin-right: 3px;
-}
-@media (max-width:700px){
-  .pokemon-detail-content{
-    flex-direction: column;
-  }
-  .pokemon-detail-description-box{
-    width: 100%;
-    align-self: flex-start;
-  }
-  .pokemon-detail-img-container{
-    width: 100%;
-  }
-  .pokemon-detail-img{
-    width: 160px;
-    height: 150px;
-  }
-  .pop-up-detail-bg{
-    width: 420px;
-  }
-}
-@media (max-width: 450px){
-  .pop-up-detail-bg{
-    width: 340px;
-  }
-  .pokemon-container{
-    height: 125px;
-  }
-  .content-box{
-    grid-template-columns: repeat(auto-fit, 170px);
-  }
 }

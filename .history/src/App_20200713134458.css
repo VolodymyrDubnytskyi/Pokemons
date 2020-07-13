@@ -548,7 +548,7 @@ button {
     width: 340px;
   }
   .pokemon-container{
-    height: 125px;
+    height: 130px;
   }
   .content-box{
     grid-template-columns: repeat(auto-fit, 170px);

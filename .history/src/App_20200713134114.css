@@ -536,7 +536,7 @@ button {
     width: 100%;
   }
   .pokemon-detail-img{
-    width: 160px;
+    width: 150px;
     height: 150px;
   }
   .pop-up-detail-bg{
@@ -545,12 +545,6 @@ button {
 }
 @media (max-width: 450px){
   .pop-up-detail-bg{
-    width: 340px;
-  }
-  .pokemon-container{
-    height: 125px;
-  }
-  .content-box{
-    grid-template-columns: repeat(auto-fit, 170px);
+    width: 350px;
   }
 }

@@ -23,7 +23,7 @@ const BasicInfo = props => {
                     })}
                 </div>
                 <div className={'pokemon-height-and-weight'}>
-                    <span className={'pokemon-height'}>
+                    <span className={'pokemon-heigth'}>
                         <b>Height:</b>
                         {+(pokemon.height + '0') / 100}m
                             </span>

@@ -2,8 +2,6 @@ import React from 'react';
 import BasicInfo from './BasicInfo';
 import Stats from './Stats';
 import Abilities from './Abilities';
-import LoadingScreen from '../../LoadingScreen/LoadingScreen'
-
 
 const menu = ['Basic Info', 'Stats', 'Abilities']
 

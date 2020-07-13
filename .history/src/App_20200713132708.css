@@ -158,7 +158,8 @@
 }
 .pop-up-detail-bg {
   min-height: 400px;
-  width: 600px;
+  min-width: 340px;
+  max-width: 600px;
 }
 .pop-up-detail-header,
 .aboutPopUp-header {
@@ -536,21 +537,7 @@ button {
     width: 100%;
   }
   .pokemon-detail-img{
-    width: 160px;
+    width: 150px;
     height: 150px;
-  }
-  .pop-up-detail-bg{
-    width: 420px;
-  }
-}
-@media (max-width: 450px){
-  .pop-up-detail-bg{
-    width: 340px;
-  }
-  .pokemon-container{
-    height: 125px;
-  }
-  .content-box{
-    grid-template-columns: repeat(auto-fit, 170px);
   }
 }

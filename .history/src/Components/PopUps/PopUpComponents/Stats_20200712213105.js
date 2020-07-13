@@ -3,12 +3,12 @@ import React from 'react';
 const Stats = props => {
     const {pokemon} = props;
     return (
-        <section className={'stats-container'}>
+        <div className={'stats-container'}>
             <div className={'stats-content-container'}>
-                <header className={'stats-table-heading'}>
+                <div className={'stats-table-heading'}>
                     <div className={'table-column-heading table-column-heading-lg'}>Name</div>
                     <div className={'table-column-heading table-column-heading-s'}>Base</div>
-                </header>
+                </div>
                 {pokemon.stats.map((item, index) => {
                     const {stat, base_stat} = item;
                     return (
@@ -19,7 +19,7 @@ const Stats = props => {
                     );
                 })}
             </div>
-        </section>
+        </div>
     );
 }
 export default Stats;

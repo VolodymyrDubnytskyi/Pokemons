@@ -547,10 +547,4 @@ button {
   .pop-up-detail-bg{
     width: 340px;
   }
-  .pokemon-container{
-    height: 125px;
-  }
-  .content-box{
-    grid-template-columns: repeat(auto-fit, 170px);
-  }
 }

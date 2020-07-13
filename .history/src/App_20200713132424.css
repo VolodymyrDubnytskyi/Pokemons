@@ -158,7 +158,8 @@
 }
 .pop-up-detail-bg {
   min-height: 400px;
-  width: 600px;
+  min-width: 340px;
+  max-width: 600px;
 }
 .pop-up-detail-header,
 .aboutPopUp-header {
@@ -517,12 +518,8 @@ button {
 .selected-pokemon {
   background-color: rgb(0, 0, 128);
 }
-.pokemon-height{
-  margin-right: 10px;
-}
-.pokemon-height b,
-.pokemon-weight b{
-  margin-right: 3px;
+.pokemon-heigth{
+  margin-right: 5px;
 }
 @media (max-width:700px){
   .pokemon-detail-content{
@@ -536,21 +533,7 @@ button {
     width: 100%;
   }
   .pokemon-detail-img{
-    width: 160px;
+    width: 150px;
     height: 150px;
-  }
-  .pop-up-detail-bg{
-    width: 420px;
-  }
-}
-@media (max-width: 450px){
-  .pop-up-detail-bg{
-    width: 340px;
-  }
-  .pokemon-container{
-    height: 125px;
-  }
-  .content-box{
-    grid-template-columns: repeat(auto-fit, 170px);
   }
 }
