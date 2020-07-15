@@ -11,9 +11,9 @@ class Header extends Component {
         aboutProjectPopUp: false,
         activePokeDvd: true
     }
-
-    showMenu = e => this.setState({ activeMenu: !this.state.activeMenu })
-    closeAboutPopUp = e => this.setState({ aboutProjectPopUp: false })
+    
+    showMenu = e => this.setState({activeMenu: !this.state.activeMenu})
+    closeAboutPopUp = e => this.setState({ aboutProjectPopUp: false})
     setInputValue = e => {
         this.setState({
             searchPoki: e.target.value
@@ -51,10 +51,10 @@ class Header extends Component {
                         />
                     </nav>
                 </header>
-                {this.state.activeMenu &&
-                    <Menu showAboutPopUp={this.showAboutPopUp} />}
-                {this.state.aboutProjectPopUp &&
-                    <AboutPopUp closeAboutPopUp={this.closeAboutPopUp} />}
+                {this.state.activeMenu && 
+                <Menu showAboutPopUp={this.showAboutPopUp} />}
+                {this.state.aboutProjectPopUp && 
+                <AboutPopUp closeAboutPopUp={this.closeAboutPopUp} />}
             </>
         );
     }

@@ -453,12 +453,11 @@ button {
   color: rgb(5, 6, 8);
   position: absolute;
   top: 45px;
-  left: 0px;  
+  left: 0px;
   padding: 2px 4px 4px 2px;
   border-style: solid;
   border-width: 2px;
   list-style: none;
-  z-index: 2;
 }
 .menu-item {
   display: flex;
