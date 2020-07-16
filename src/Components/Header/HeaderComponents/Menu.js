@@ -8,19 +8,19 @@ const Menu = props => {
     const ref = useRef();
     useOutsideClick(ref, () => {
         showMenu();
-      });
-      
+    });
+
     return (
         <div className={'nav-menu-container'} ref={ref}>
             <ul>
                 <li className={'menu-item'}>
                     <img src={imgDvd} alt="window-95-dvd" className={'menu-icons'} />
-                    <a href='' className={'menu-links'}>GitHub Repo</a>
-                 </li>
+                    <a href='https://github.com/VolodymyrDubnytskyi/Pokemons' className={'menu-github-link'}>GitHub Repo</a>
+                </li>
                 <hr className={'decorative-hr-line'} />
                 <li className={'menu-item'} onClick={showAboutPopUp}>
                     <img src={imgPc} alt="window-95-computer" className={'menu-icons'} />
-                    <a href='' className={'menu-links'}>About</a>
+                    About
                  </li>
             </ul>
         </div>

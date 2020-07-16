@@ -498,8 +498,9 @@ button {
 }
 .menu-item:hover{
   background-color: rgb(0, 0, 128);
+  color: #fff;
 }
-.menu-item:hover .menu-links{
+.menu-item:hover .menu-github-link{
     color: #fff
 }
 .menu-icons {
@@ -508,8 +509,9 @@ button {
   width: 23px;
   cursor: context-menu;
 }
-.menu-links{
+.menu-github-link{
   text-decoration: none;
+  cursor: context-menu;
   color: var(--main-color);
 }
 .dvd-icon {
