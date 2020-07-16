@@ -15,10 +15,12 @@ class Header extends Component {
     showMenu = e => this.setState({ activeMenu: !this.state.activeMenu })
     closeAboutPopUp = e => this.setState({ aboutProjectPopUp: false })
     setInputValue = e => {
+        const {filterPokemons} = this.props;
         this.setState({
             searchPoki: e.target.value
         }, () => {
-            this.props.filterPokemons(this.state.searchPoki)
+            const {searchPoki} = this.state;
+            filterPokemons(searchPoki)
         })
     }
     showAboutPopUp = e => {
@@ -28,36 +30,41 @@ class Header extends Component {
         })
     }
     activeDvdPokemon = e => {
+        const {activePokemonPopUp} = this.props;
         this.setState({ activePokeDvd: false })
-        this.props.activePokemonPopUp();
+        activePokemonPopUp();
     }
 
     render() {
+        const {activeMenu, activePokeDvd, searchPoki, aboutProjectPopUp}  = this.state;
+        const {activePopUp, dvdIcon}  = this.props;
+        const {activeDvdPokemon, showMenu, setInputValue, showAboutPopUp, closeAboutPopUp}  = this;
         return (
             <>
                 <header className={'header-container'}>
                     <nav className={'navbar-container'}>
                         <Buttons
-                            activeMenu={this.state.activeMenu}
-                            activePokeDvd={this.state.activePokeDvd}
-                            activePopUp={this.props.activePopUp}
-                            activeDvdPokemon={this.activeDvdPokemon}
-                            showMenu={this.showMenu}
-                            dvdIcon={this.props.dvdIcon}
+                            activeMenu={activeMenu}
+                            activePokeDvd={activePokeDvd}
+                            activePopUp={activePopUp}
+                            activeDvdPokemon={activeDvdPokemon}
+                            showMenu={showMenu}
+                            dvdIcon={dvdIcon}
                         />
                         <SearchPokemonInput
-                            searchPoki={this.state.searchPoki}
-                            setInputValue={this.setInputValue}
+                            searchPoki={searchPoki}
+                            setInputValue={setInputValue}
                         />
                     </nav>
                 </header>
-                {this.state.activeMenu &&
-                    <Menu showAboutPopUp={this.showAboutPopUp} />}
-                {this.state.aboutProjectPopUp &&
-                    <AboutPopUp closeAboutPopUp={this.closeAboutPopUp} />}
+                {activeMenu &&
+                    <Menu 
+                    showAboutPopUp={showAboutPopUp}
+                    showMenu={showMenu} />}
+                {aboutProjectPopUp &&
+                    <AboutPopUp closeAboutPopUp={closeAboutPopUp} />}
             </>
         );
     }
 }
-
 export default Header;

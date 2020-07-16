@@ -28,7 +28,8 @@ class Home extends Component {
             }))
     }
     getPokemonsData = e => {
-        this.state.collectionsOfUrl.map((item) => {
+        const {collectionsOfUrl} = this.state;
+        collectionsOfUrl.map((item) => {
             fetch(item.url)
                 .then(res => res.json())
                 .then((result) => {
@@ -47,7 +48,8 @@ class Home extends Component {
     }
 
     checkPokemonDetail = pokemon => {
-        this.getPokemonSpecies(pokemon)
+        const { getPokemonSpecies} = this;
+        getPokemonSpecies(pokemon)
         this.setState({
             clickedPokemonDetail: pokemon,
             activePopUp: true
@@ -55,19 +57,20 @@ class Home extends Component {
     }
 
     activePokemonPopUp = e => {
+        const {activePopUp} = this.state
         this.setState({
-            activePopUp: !this.state.activePopUp,
+            activePopUp: !activePopUp,
             dvdIcon: false
         })
     }
-    filterPokemons = serchWord => {
+    filterPokemons = searchWord => {
         this.setState({
-            pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(serchWord))
+            pokemonsDetail: this.state.pokemonDetailDefault.filter((item) => item.name.includes(searchWord))
         })
     }
     removeDvdIcon = e => this.setState({ dvdIcon: true })
     pokemonSelection = pokeIndex => this.setState({ pokemonSelected: pokeIndex })
-    
+
     render() {
         const { activePopUp, pokemonsDetail, dvdIcon, clickedPokemonDetail, pokemonSpecies, isLoaded, pokemonSelected } = this.state;
         const { activePokemonPopUp, filterPokemons, removeDvdIcon, checkPokemonDetail, pokemonSelection } = this;
@@ -99,7 +102,7 @@ class Home extends Component {
                                     >
                                         <img
                                             src={sprites.front_default ? sprites.front_default : imgPokeball}
-                                            alt="pokemon-image"
+                                            alt="pokemon"
                                             className={'pokeball-img'} />
                                         <h3
                                             className={`pokemon-name ${pokemonSelected === i && 'selected-pokemon'}`}>

@@ -11,6 +11,11 @@
   margin: 0;
   padding: 0;
 }
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+/* main-background + pokemon container */
 .main-bg {
   min-height: 100vh;
   width: 100%;
@@ -39,14 +44,13 @@
   padding: 2px;
   text-decoration: underline;
 }
-/* header navbar */
+/* header (navbar, buttons with dropdown menu, search pokemon input)*/
 .header-container {
   border-left-color: rgb(255, 255, 255);
   border-top-color: rgb(255, 255, 255);
   border-right-color: var(--main-color);
   border-bottom-color: var(--main-color);
-  box-shadow: rgba(0, 0, 0, 0.35) 4px 4px 10px 0px, rgb(223, 224, 227) 1px 1px 0px 1px inset,
-    rgb(136, 140, 143) -1px -1px 0px 1px inset;
+  box-shadow: var(--box-shadow-main);
   box-sizing: border-box;
   background-color: var(--menu-bg-color);
   color: var(--main-color);
@@ -100,7 +104,7 @@
   margin-right: 5px;
   width: 25px;
 }
-/* input */
+/*search pokemon input */
 .input-container {
   position: relative;
   box-sizing: border-box;
@@ -137,7 +141,7 @@
   padding: 0 5px;
   border: none;
 }
-/* pop Up */
+/* pop Up ( main pop Up with pokemon detail information and about project pop Up that has links with technologies that have been used in this project) */
 .pop-up-detail-bg,
 .aboutPopUp-container {
   position: fixed;
@@ -160,6 +164,7 @@
   min-height: 400px;
   width: 600px;
 }
+/* pop Ups headers */
 .pop-up-detail-header,
 .aboutPopUp-header {
   height: 33px;
@@ -171,7 +176,9 @@
   color: rgb(255, 255, 255);
   padding: 0px 0.5rem;
   background: var(--active-color-gradient);
+  cursor: context-menu;
 }
+/* pop Ups close btn */
 .close-btn {
   position: relative;
   display: flex;
@@ -189,8 +196,8 @@
   border: 2px solid;
   border-left-color: rgb(255, 255, 255);
   border-top-color: rgb(255, 255, 255);
-  border-right-color: rgb(5, 6, 8);
-  border-bottom-color: rgb(5, 6, 8);
+  border-right-color: var(--main-color);
+  border-bottom-color: var(--main-color);
   box-shadow: var(--box-shadow-btn);
   font-weight: bold;
 }
@@ -222,6 +229,7 @@
   color: rgb(136, 140, 143);
   text-shadow: rgb(255, 255, 255) 1px 1px;
 }
+/* pokemon detail information elements */
 .pokemon-detail {
   width: 95%;
   margin: 20px auto 10px auto;
@@ -238,7 +246,7 @@
   border-top-color: rgb(255, 255, 255);
   border-right-color: var(--main-color);
   border-bottom-color: var(--main-color);
-  box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
+  box-shadow: var(--box-shadow-btn);
   position: relative;
   display: flex;
   align-items: center;
@@ -254,10 +262,10 @@
 .pokemon-detail-menu-item {
   box-sizing: border-box;
   display: inline-block;
-  background-color: rgb(206, 208, 207);
+  background-color: var(--menu-bg-color);
   border-left-color: rgb(255, 255, 255);
   border-top-color: rgb(255, 255, 255);
-  border-right-color: rgb(5, 6, 8);
+  border-right-color: var(--main-color);
   box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px 1px 0px 1px inset;
   position: relative;
   height: 35px;
@@ -266,7 +274,7 @@
   border-top-right-radius: 5px;
   margin-bottom: -2px;
   cursor: default;
-  color: rgb(5, 6, 8);
+  color: var(--main-color);
   border-style: solid solid none;
   padding: 0px 0.5rem;
   border-bottom: none;
@@ -314,18 +322,27 @@
 .pokemon-description {
   margin-top: 10px;
 }
-.pokemon-height-and-weight {
+.pokemon-height {
+  margin-right: 10px;
 }
+.pokemon-height b,
+.pokemon-weight b {
+  margin-right: 3px;
+}
+.selected-pokemon {
+  background-color: rgb(0, 0, 128);
+}
+/* stat and abilities of pokemon */
 .stats-container,
 .abilities-container {
   z-index: 1;
-  background-color: rgb(206, 208, 207);
-  color: rgb(5, 6, 8);
+  background-color: var(--menu-bg-color);
+  color:var(--main-color);
   border-left-color: rgb(255, 255, 255);
   border-top-color: rgb(255, 255, 255);
-  border-right-color: rgb(5, 6, 8);
-  border-bottom-color: rgb(5, 6, 8);
-  box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
+  border-right-color: var(--main-color);
+  border-bottom-color: var(--main-color);
+  box-shadow: var(--box-shadow-btn);
   border-style: solid;
   border-width: 2px;
   padding: calc(1.5rem) 1rem 1rem;
@@ -361,8 +378,8 @@
   content: "";
   width: calc(100% - 4px);
   height: calc(100% - 4px);
-  border-left-color: rgb(5, 6, 8);
-  border-top-color: rgb(5, 6, 8);
+  border-left-color: var(--main-color);
+  border-top-color: var(--main-color);
   border-right-color: rgb(223, 224, 227);
   border-bottom-color: rgb(223, 224, 227);
   pointer-events: none;
@@ -384,16 +401,16 @@
   padding: 4px 10px;
 }
 .table-column-heading {
-  border-right-color: rgb(5, 6, 8);
-  border-bottom-color: rgb(5, 6, 8);
-  box-shadow: rgb(223, 224, 227) 1px 1px 0px 1px inset, rgb(136, 140, 143) -1px -1px 0px 1px inset;
+  border-right-color: var(--main-color);
+  border-bottom-color: var(--main-color);
+  box-shadow: var(--box-shadow-btn);
   display: inline-block;
   vertical-align: inherit;
   cursor: default;
   border-style: none solid solid none;
   border-width: 2px 2px;
   padding: 5px 0.5rem;
-  background: rgb(206, 208, 207);
+  background: var(--menu-bg-color);
   border-left: none;
   border-top: none;
 }
@@ -408,10 +425,10 @@
 }
 .active-btn {
   box-sizing: border-box;
-  background-color: rgb(206, 208, 207);
-  color: rgb(5, 6, 8);
-  border-left-color: rgb(5, 6, 8);
-  border-top-color: rgb(5, 6, 8);
+  background-color: var(--menu-bg-color);
+  color: var(--main-color);
+  border-left-color: var(--main-color);
+  border-top-color: var(--main-color);
   border-right-color: rgb(255, 255, 255);
   border-bottom-color: rgb(255, 255, 255);
   box-shadow: rgb(136, 140, 143) 1px 1px 0px 1px inset, rgb(223, 224, 227) -1px -1px 0px 1px inset;
@@ -434,53 +451,9 @@
   background: var(--active-color-gradient);
   color: #fff;
 }
-button {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  outline: none;
-}
-/* nav menu */
-.nav-menu-container {
-  width: auto;
-  border-left-color: rgb(255, 255, 255);
-  border-top-color: rgb(255, 255, 255);
-  border-right-color: rgb(5, 6, 8);
-  border-bottom-color: rgb(5, 6, 8);
-  box-shadow: rgba(0, 0, 0, 0.35) 4px 4px 10px 0px, rgb(223, 224, 227) 1px 1px 0px 1px inset,
-    rgb(136, 140, 143) -1px -1px 0px 1px inset;
-  box-sizing: border-box;
-  display: inline-block;
-  background-color: rgb(206, 208, 207);
-  color: rgb(5, 6, 8);
-  position: absolute;
-  top: 45px;
-  left: 0px;  
-  padding: 2px 4px 4px 2px;
-  border-style: solid;
-  border-width: 2px;
-  list-style: none;
-  z-index: 2;
-}
-.menu-item {
-  display: flex;
-  align-items: center;
-  height: 43px;
-  padding: 0 10px;
-}
-.menu-item:hover {
-  background-color: rgb(0, 0, 128);
-  color: #fff;
-}
-.menu-icons {
-  margin-right: 10px;
-  height: 23px;
-  width: 23px;
-  cursor: context-menu;
-}
-.decorative-hr-line {
-  width: 100%;
-  border-bottom: 2px solid rgb(255, 255, 255);
-  border-top: 2px solid rgb(136, 140, 143);
-  margin: 0px;
+/* about project pop Up  */
+.aboutPopUp-content-container {
+  padding: 1rem;
 }
 .aboutPopUp-container p {
   margin-top: 1rem;
@@ -492,65 +465,99 @@ button {
 .aboutPopUp-container p {
   font-size: 18px;
 }
-.aboutPopUp-content-container {
-  padding: 1rem;
+/* dropdown menu with github repo link and about project pop up link*/
+.nav-menu-container {
+  width: auto;
+  border-left-color: rgb(255, 255, 255);
+  border-top-color: rgb(255, 255, 255);
+  border-right-color: var(--main-color);
+  border-bottom-color: var(--main-color);
+  box-shadow: var(--box-shadow-main);
+  box-sizing: border-box;
+  background-color: var(--menu-bg-color);
+  color: var(--main-color);
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  padding: 2px 4px 4px 2px;
+  border-style: solid;
+  border-width: 2px;
+  list-style: none;
+  z-index: 2;
 }
+.navbar-btn-container {
+  display: flex;
+  align-items: center;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  height: 43px;
+  padding: 0 10px;
+  cursor: context-menu;
+}
+.menu-item:hover{
+  background-color: rgb(0, 0, 128);
+}
+.menu-item:hover .menu-links{
+    color: #fff
+}
+.menu-icons {
+  margin-right: 10px;
+  height: 23px;
+  width: 23px;
+  cursor: context-menu;
+}
+.menu-links{
+  text-decoration: none;
+  color: var(--main-color);
+}
+.dvd-icon {
+  height: 65%;
+  width: 20%;
+  margin-right: 5px;
+}
+.decorative-hr-line {
+  width: 100%;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid rgb(136, 140, 143);
+  margin: 0px;
+}
+/* windows hourglass loading animation */
 .windows-loader {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.pokeball-img {
-  width: 50%;
-  height: 70%;
-}
-.dvd-img {
-  height: 65%;
-  width: 20%;
-  margin-right: 5px;
-}
-.navbar-btn-container {
-  display: flex;
-  align-items: center;
-}
-.selected-pokemon {
-  background-color: rgb(0, 0, 128);
-}
-.pokemon-height{
-  margin-right: 10px;
-}
-.pokemon-height b,
-.pokemon-weight b{
-  margin-right: 3px;
-}
-@media (max-width:700px){
-  .pokemon-detail-content{
+/* rwd break points (700px, 460px) */
+@media (max-width: 700px) {
+  .pokemon-detail-content {
     flex-direction: column;
   }
-  .pokemon-detail-description-box{
+  .pokemon-detail-description-box {
     width: 100%;
     align-self: flex-start;
   }
-  .pokemon-detail-img-container{
+  .pokemon-detail-img-container {
     width: 100%;
   }
-  .pokemon-detail-img{
+  .pokemon-detail-img {
     width: 160px;
     height: 150px;
   }
-  .pop-up-detail-bg{
+  .pop-up-detail-bg {
     width: 440px;
   }
 }
-@media (max-width: 460px){
-  .pop-up-detail-bg{
+@media (max-width: 460px) {
+  .pop-up-detail-bg {
     width: 340px;
   }
-  .pokemon-container{
+  .pokemon-container {
     height: 125px;
   }
-  .content-box{
+  .content-box {
     grid-template-columns: repeat(auto-fit, 170px);
   }
 }

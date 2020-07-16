@@ -17,7 +17,7 @@ const Buttons = props => {
                      ${activePopUp ? 'active-btn' : 'nav-menu-btn'}`
                 }
                 onClick={activeDvdPokemon}>
-                <img src={imgDvd} alt="dvd" className={'dvd-img'} />
+                <img src={imgDvd} alt="dvd" className={'dvd-icon'} />
                   Pokemon
             </button>
         </div>
